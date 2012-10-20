@@ -9,9 +9,13 @@
         <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="60" killRadius="50" />
 
         <!-- port to zone if we are in Town -->
+        <If condition="(not Me.IsInTown)">   
+            <UseTownPortal questId="1" />       
+        </If>
+        
         <If condition="Zeta.ZetaDia.CurrentWorldId==161472">
-        <UseWaypoint questId="1" x="324.2319" y="291.6554" z="1.64563" actorId="6442" waypointNumber="4" />
-        <WaitTimer questId="1" waitTime="200"/>
+            <UseWaypoint questId="1" x="324.2319" y="291.6554" z="1.64563" actorId="6442" waypointNumber="4" />
+            <WaitTimer questId="1" waitTime="200"/>
         </If>
 
         <!-- whole profile set -->
@@ -48,7 +52,7 @@
         </If>
     
         <!-- switch profiles using random versions -->
-        <Continue profile="KeyHuntinn_A2_NV2a.xml, KeyHuntinn_A2_NV2b.xml"/>
+        <Continue profile="KeyHuntinn_A2_NV2.xml" />
     </Order>
 
  </Profile>

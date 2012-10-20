@@ -6,6 +6,11 @@
     <Order>
         <Keyrun profile="KeyHuntinn_XahRith.xml" />
         <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="80" killRadius="45" />
+        
+        <If condition="(not Me.IsInTown)">   
+            <UseTownPortal questId="1" />       
+        </If>
+
         <!-- From Town -->
         <If condition="Zeta.ZetaDia.CurrentWorldId==172909">
             <MoveTo questId="1" x="286.0547" y="354.1901" z="0.6358567" pathPrecision="10" name="Bastion to Skycrown-01" />
@@ -18,7 +23,6 @@
             <WaitTimer questId="1" waitTime="250" />
         </If>
         
-
         <!-- Checkpoint outside door -->    
         <If condition="ActorExistsAt(3795, 3810.261, 3706.156, -25.00002, 50) and ZetaDia.CurrentWorldId == 81019">
             <WaitTimer questId="1" waitTime="500" />
@@ -55,7 +59,7 @@
         </If>
         
         <!-- Checkpoint --> 
-            <If condition="ActorExistsAt(3795, 3198.261, 3480.627, 0.1000006, 50) and ZetaDia.CurrentWorldId == 81019">
+        <If condition="ActorExistsAt(3795, 3198.261, 3480.627, 0.1000006, 50) and ZetaDia.CurrentWorldId == 81019">
             <WaitTimer questId="1" waitTime="250" />
             <MoveTo questId="1" x="3101.86" y="3449.628" z="0.4667553" pathPrecision="10" name="Skycrown-30" />
             <MoveTo questId="1" x="2995.714" y="3454.829" z="25.27348"  name="Skycrown-31" />
@@ -88,7 +92,10 @@
             <MoveTo questId="1" x="2716.269" y="2676.697" z="25.10311"  name="Skycrown-58" />
         </If>
           
-        <UseTownPortal questId="1" />
+        <If condition="(not Me.IsInTown)">   
+            <UseTownPortal questId="1" />       
+        </If>
+        
         <WaitTimer questId="1" waitTime="5000" />
 
         <Continue profile="KeyHuntinn_XahRith.xml" />

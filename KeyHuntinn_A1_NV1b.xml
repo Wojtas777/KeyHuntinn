@@ -1,5 +1,5 @@
 <Profile>
-    <Name>KeyHuntinn - Act 1 - NV Gather 1a - Antidote - Leoric's Manor + Leoric's Hunting Grounds B</Name>
+    <Name>KeyHuntinn - Act 1 - NV Gather 1b - Antidote - Leoric's Manor + Leoric's Hunting Grounds B</Name>
     <KillMonsters>True</KillMonsters>
     <PickupLoot>True</PickupLoot>
     <GameParams quest="72801" step="36" act="A1" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1"  />

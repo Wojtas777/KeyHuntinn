@@ -57,7 +57,7 @@
         </If>
 
         <!-- switch profiles using random versions -->
-        <Continue profile="KeyHuntinn_A2_NV2a.xml, KeyHuntinn_A2_NV2b.xml"/>
+        <Continue profile="KeyHuntinn_A2_NV2.xml" />
     </Order>
 
  </Profile>

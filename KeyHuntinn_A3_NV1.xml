@@ -6,8 +6,11 @@
     <Order>
         <Keyrun profile="KeyHuntinn_XahRith.xml" />
         <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="80" killRadius="45" />
-    
 
+        <If condition="(not Me.IsInTown)">   
+            <UseTownPortal questId="1" />       
+        </If>
+        
         <!-- From Town -->
         <If condition="Zeta.ZetaDia.CurrentWorldId==172909">
             <MoveTo questId="1" x="347.1507" y="410.863" z="0.1557077" pathPrecision="1" name="Bastion-01" />

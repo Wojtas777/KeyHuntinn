@@ -4,7 +4,7 @@
     <PickupLoot>True</PickupLoot>
     <GameParams quest="72801" step="36" act="A1" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1"  />
     <Order>
-        <Keyrun profile="TinnKey_A1_Key_Odeg.xml" />
+        <Keyrun profile="KeyHuntinn_Odeg.xml" />
         
         <If condition="(not Me.IsInTown)">   
             <UseTownPortal questId="1" />       
