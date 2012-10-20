@@ -51,7 +51,9 @@
         </If>
         <MoveTo questId="1" x="2131.725" y="458.1083" z="0.1" name="FoM #20" />
         <MoveTo questId="1" x="2131.725" y="458.1083" z="0.1" name="FoM #21" />
-        <MoveTo questId="1" x="1803.423" y="310.4841" z="0.1" name="FoM #22" />
+        <MoveTo questId="1" x="2072.387" y="469.429" z="0.1" name="FoM #22.1" />    
+        <MoveTo questId="1" x="1961.413" y="485.4483" z="0.1" name="FoM #22.2" />
+        <MoveTo questId="1" x="1920.435" y="372.7823" z="0.1" name="FoM #22.3" />
         <MoveTo questId="1" x="1865.47" y="222.6739" z="0.1000001" name="FoM #23" />
         <MoveTo questId="1" x="1688.015" y="256.6546" z="0.1" name="FFoM #24" />
         <MoveTo questId="1" x="1709.447" y="386.4449" z="0.2809826" name="FoM #25" />
