@@ -1,10 +1,11 @@
 <Profile>
-    <Name>KeyHuntinn - Act 2 - NV Gather 1a - Elderberries - Alcarnus A</Name>
+    <Name>KeyHuntinn - Act 2 - NV Gather 1a - Elderberries - Mine A</Name>
     <KillMonsters>True</KillMonsters>
     <PickupLoot>True</PickupLoot>
     <GameParams quest="57337" step="26" act="A2" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1" />
     <Order>
         <Keyrun profile="KeyHuntinn_Sokahr.xml" />
+        <!-- Mine -->
         <!-- set the kill/loot radius -->
         <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="60" killRadius="50" />
 
@@ -13,51 +14,38 @@
             <UseTownPortal questId="1" />       
         </If>
 
-        <UseWaypoint questId="1" x="324.2319" y="291.6554" z="1.64563" actorId="6442" waypointNumber="4" />
-        <WaitTimer questId="1" waitTime="200"/>
+        <If condition="Zeta.ZetaDia.CurrentWorldId==161472">
+            <UseWaypoint questId="1" x="324.2319" y="291.6554" z="1.64563" actorId="6442" waypointNumber="2" />
+            <WaitTimer WaitTime="200" />
+        </If>
 
         <!-- whole profile set -->
-        <MoveTo questId="1" x="1401.896" y="1156.234" z="184.4915" pathPrecision="10" unsafeRandomDistance ="5" />
-        <MoveTo questId="1" x="1447.493" y="1111.78" z="184.4915" pathPrecision="10" unsafeRandomDistance ="5" />
-        <MoveTo questId="1" x="1533.254" y="1127.448" z="184.4915" pathPrecision="10" unsafeRandomDistance ="5" />
-        <MoveTo questId="1" x="1567.15" y="1196.777" z="184.4915" pathPrecision="10" unsafeRandomDistance ="5" />
-        <MoveTo questId="1" x="1515.745" y="1256.116" z="184.4915" pathPrecision="10" unsafeRandomDistance ="5" />
-        <MoveTo questId="1" x="1452.287" y="1294.72" z="186.4916" pathPrecision="10" unsafeRandomDistance ="5" />
-        <MoveTo questId="1" x="1421.933" y="1256.672" z="184.4915" pathPrecision="10" unsafeRandomDistance ="5" />
-        <MoveTo questId="1" x="1363.958" y="1293.226" z="185.3188" pathPrecision="10" unsafeRandomDistance ="5" />
-
-        <!-- Checkpoint on Bridge -->
-
-        <MoveTo questId="1" x="1324.308" y="1293.514" z="184.8819" pathPrecision="10" unsafeRandomDistance ="5" />
-        <MoveTo questId="1" x="1241.884" y="1293.135" z="184.4916" pathPrecision="10" unsafeRandomDistance ="5" />
-        <MoveTo questId="1" x="1197.367" y="1293.493" z="184.4958" pathPrecision="10" unsafeRandomDistance ="5" />
-        <MoveTo questId="1" x="1174.508" y="1357.879" z="184.4915" pathPrecision="10" unsafeRandomDistance ="5" />
-        <MoveTo questId="1" x="1115.211" y="1426.203" z="184.4915" pathPrecision="10" unsafeRandomDistance ="5" />
-        <MoveTo questId="1" x="1088.057" y="1494.639" z="184.4917" pathPrecision="10" unsafeRandomDistance ="5" />
-        <MoveTo questId="1" x="1108.532" y="1543.906" z="184.4875" pathPrecision="10" unsafeRandomDistance ="5" />
-        <MoveTo questId="1" x="1165.708" y="1530.035" z="184.4917" pathPrecision="10" unsafeRandomDistance ="5" />
-        <MoveTo questId="1" x="1179.58" y="1434.342" z="184.4917" pathPrecision="10" unsafeRandomDistance ="5" />
-
-        <!-- Navpoints to run if we restart profile at the midway checkpoint -->
-        <If condition="ActorExistsAt(3795, 1312.25, 1293, 184.7818, 50) and ZetaDia.CurrentWorldId == 70885">
-            <MoveTo questId="1" x="1324.308" y="1293.514" z="184.8819" pathPrecision="10" unsafeRandomDistance ="5" />
-            <MoveTo questId="1" x="1241.884" y="1293.135" z="184.4916" pathPrecision="10" unsafeRandomDistance ="5" />
-            <MoveTo questId="1" x="1197.367" y="1293.493" z="184.4958" pathPrecision="10" unsafeRandomDistance ="5" />
-            <MoveTo questId="1" x="1174.508" y="1357.879" z="184.4915" pathPrecision="10" unsafeRandomDistance ="5" />
-            <MoveTo questId="1" x="1115.211" y="1426.203" z="184.4915" pathPrecision="10" unsafeRandomDistance ="5" />
-            <MoveTo questId="1" x="1088.057" y="1494.639" z="184.4917" pathPrecision="10" unsafeRandomDistance ="5" />
-            <MoveTo questId="1" x="1108.532" y="1543.906" z="184.4875" pathPrecision="10" unsafeRandomDistance ="5" />
-            <MoveTo questId="1" x="1165.708" y="1530.035" z="184.4917" pathPrecision="10" unsafeRandomDistance ="5" />
-            <MoveTo questId="1" x="1179.58" y="1434.342" z="184.4917" pathPrecision="10" unsafeRandomDistance ="5" />
-        </If>
-
-        <!-- Go back to Town to get ready for next profile -->
-        <If condition="(not Me.IsInTown)">   
-            <UseTownPortal questId="1" />       
-        </If>
-
+        <MoveTo questId="1" x="2021.518" y="1052.173" z="171.3882" pathPrecision="10" unsafeRandomDistance="5" />
+        <MoveTo questId="1" x="2021.518" y="1052.173" z="171.3882" pathPrecision="10" unsafeRandomDistance="5" />
+        <MoveTo questId="1" x="2020.404" y="947.2237" z="169.7564" pathPrecision="10" unsafeRandomDistance="5" />
+        <MoveTo questId="1" x="2043.287" y="868.3506" z="169.8934" pathPrecision="10" unsafeRandomDistance="5" />
+        <MoveTo questId="1" x="1978.844" y="820.3332" z="170.0131" pathPrecision="10" unsafeRandomDistance="5" />
+        <MoveTo questId="1" x="1957.915" y="887.5001" z="169.7564" pathPrecision="10" unsafeRandomDistance="5" />
+        <MoveTo questId="1" x="1899.751" y="956.6108" z="169.7564" pathPrecision="10" unsafeRandomDistance="5" />
+        <MoveTo questId="1" x="1849.302" y="894.4056" z="169.7564" pathPrecision="10" unsafeRandomDistance="5" />
+        <MoveTo questId="1" x="1831.69" y="850.9122" z="169.8358"  pathPrecision="10" unsafeRandomDistance="5" />
+        <MoveTo questId="1" x="1765.433" y="1001.145" z="169.7564" pathPrecision="10" unsafeRandomDistance="5" />
+        <MoveTo questId="1" x="1790.756" y="1052.861" z="172.0215" pathPrecision="10" unsafeRandomDistance="5" />
+        <MoveTo questId="1" x="1777.478" y="1103.961" z="169.7565" pathPrecision="10" unsafeRandomDistance="5" />
+        <MoveTo questId="1" x="1881.395" y="1100.714" z="170.9336" pathPrecision="10" unsafeRandomDistance="5" />
+        <MoveTo questId="1" x="1769.867" y="1148.974" z="169.7793" pathPrecision="10" unsafeRandomDistance="5" />
+        <MoveTo questId="1" x="1770.994" y="1209.792" z="170.1794" pathPrecision="10" unsafeRandomDistance="5" />
+        <MoveTo questId="1" x="1770.994" y="1209.792" z="170.1794" pathPrecision="10" unsafeRandomDistance="5" />
+        <MoveTo questId="1" x="1923.252" y="1163.111" z="169.9847" pathPrecision="10" unsafeRandomDistance="5" />
+        <MoveTo questId="1" x="1876.806" y="1308.173" z="170.1794" pathPrecision="10" unsafeRandomDistance="5" />
+        <MoveTo questId="1" x="1805.771" y="1376.029" z="170.1795" pathPrecision="10" unsafeRandomDistance="5" />
+   
+        <!-- Go back to Town -->
+        <UseTownPortal questId="1" />
+        <WaitTimer WaitTime="2500" />   
+    
         <!-- switch profiles using random versions -->
-        <Continue profile="KeyHuntinn_A2_NV2.xml" />
+        <Continue profile="KeyHuntinn_A2_NV2a.xml, KeyHuntinn_A2_NV2b.xml" />
     </Order>
 
  </Profile>
