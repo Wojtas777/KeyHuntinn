@@ -7,7 +7,10 @@
         <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="80" killRadius="45" />
         
         <If condition="(not Me.IsInTown)">   
-            <UseTownPortal questId="1" />       
+            <UseTownPortal questId="1" />  
+            <While condition="not Me.IsInTown">
+                <WaitTimer questId="1" waitTime="50" />
+            </While>
         </If>
         
         <!-- From Town -->
@@ -112,9 +115,9 @@
         
         <If condition="(not Me.IsInTown)">   
             <UseTownPortal questId="1" />  
-                <While condition="not Me.IsInTown">
-                    <WaitTimer questId="1" waitTime="250" />
-                </While>
+            <While condition="not Me.IsInTown">
+                <WaitTimer questId="1" waitTime="50" />
+            </While>
         </If>
 
         <Continue profile="_Start_KeyHuntinn.xml" exitgame="true" />

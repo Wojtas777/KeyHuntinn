@@ -7,8 +7,12 @@
         <Keyrun profile="KeyHuntinn_Odeg.xml" />
 
         <If condition="(not Me.IsInTown)">   
-            <UseTownPortal questId="1" />       
+            <UseTownPortal questId="1" />  
+            <While condition="not Me.IsInTown">
+                <WaitTimer questId="1" waitTime="50" />
+            </While>
         </If>
+
         <!-- Leorics Manor -->
         <UseWaypoint questId="1" actorId="223757" x="2981.259" y="2836.146" z="24.89399" waypointNumber="13" />
         <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="30" killRadius="60" />
@@ -58,7 +62,13 @@
         <MoveTo questId="1" x="940.1022" y="3771.204" z="90.1" name="Hunting Grounds #17" pathPrecision="1" unsafeRandomDistance="5" />
         <MoveTo questId="1" x="914.9922" y="3711.282" z="80.09999" name="Hunting Grounds #18" pathPrecision="1" unsafeRandomDistance="5" />
         <!-- Leorics Manor -Complete- -->
-        <UseTownPortal questId="1" />
+        
+        <If condition="(not Me.IsInTown)">   
+            <UseTownPortal questId="1" />  
+            <While condition="not Me.IsInTown">
+                <WaitTimer questId="1" waitTime="50" />
+            </While>
+        </If>
 
         <Continue profile="KeyHuntinn_A1_NV2a.xml, KeyHuntinn_A1_NV2b.xml" />
     </Order>

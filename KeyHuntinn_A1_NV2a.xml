@@ -7,8 +7,12 @@
         <Keyrun profile="KeyHuntinn_Odeg.xml" />
         
         <If condition="(not Me.IsInTown)">   
-            <UseTownPortal questId="1" />       
+            <UseTownPortal questId="1" />  
+            <While condition="not Me.IsInTown">
+                <WaitTimer questId="1" waitTime="50" />
+            </While>
         </If>
+
         <!-- Festering Woods -->
         <UseWaypoint questId="1" actorId="223757" x="2981.259" y="2836.146" z="24.89399" waypointNumber="8" />
         <WaitTimer questId="1" waitTime="500" />
@@ -261,7 +265,13 @@
         <MoveTo questId="1" x="248.2865" y="953.9418" z="20.1" name="Festering Woods #27" pathPrecision="1" unsafeRandomDistance="5" />
         <MoveTo questId="1" x="300.5892" y="961.9233" z="20.1" name="Festering Woods #28" pathPrecision="1" unsafeRandomDistance="5" />
         <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="70" killRadius="60" />
-        <UseTownPortal questId="1" />
+        
+        <If condition="(not Me.IsInTown)">   
+            <UseTownPortal questId="1" />  
+            <While condition="not Me.IsInTown">
+                <WaitTimer questId="1" waitTime="50" />
+            </While>
+        </If>
 
         <Continue profile="KeyHuntinn_Odeg.xml" />
     </Order>

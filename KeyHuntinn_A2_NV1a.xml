@@ -11,7 +11,10 @@
 
         <!-- port to zone if we are in Town -->
         <If condition="(not Me.IsInTown)">   
-            <UseTownPortal questId="1" />       
+            <UseTownPortal questId="1" />  
+            <While condition="not Me.IsInTown">
+                <WaitTimer questId="1" waitTime="50" />
+            </While>
         </If>
 
         <If condition="Zeta.ZetaDia.CurrentWorldId==161472">
@@ -41,8 +44,12 @@
         <MoveTo questId="1" x="1805.771" y="1376.029" z="170.1795" pathPrecision="10" unsafeRandomDistance="5" />
    
         <!-- Go back to Town -->
-        <UseTownPortal questId="1" />
-        <WaitTimer WaitTime="2500" />   
+        <If condition="(not Me.IsInTown)">   
+            <UseTownPortal questId="1" />  
+            <While condition="not Me.IsInTown">
+                <WaitTimer questId="1" waitTime="50" />
+            </While>
+        </If>   
     
         <!-- switch profiles using random versions -->
         <Continue profile="KeyHuntinn_A2_NV2a.xml, KeyHuntinn_A2_NV2b.xml" />

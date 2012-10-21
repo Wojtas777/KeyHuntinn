@@ -10,7 +10,10 @@
 
         <!-- port to zone if we are in Town -->
         <If condition="(not Me.IsInTown)">   
-            <UseTownPortal questId="1" />       
+            <UseTownPortal questId="1" />  
+            <While condition="not Me.IsInTown">
+                <WaitTimer questId="1" waitTime="50" />
+            </While>
         </If>
         
         <If condition="Zeta.ZetaDia.CurrentWorldId==161472"> 
@@ -62,9 +65,11 @@
         <MoveTo questId="1" x="820.1481" y="3902.452" z="109.9565" pathPrecision="1" />
         <MoveTo questId="1" x="879.0249" y="3929.893" z="110.11" pathPrecision="1" name="final spawn check"/>
         
-        <If condition="Me.IsInTown==False">   
-            <UseTownPortal questId="1" />
-            <WaitTimer WaitTime="2500" />       
+        <If condition="(not Me.IsInTown)">   
+            <UseTownPortal questId="1" />  
+            <While condition="not Me.IsInTown">
+                <WaitTimer questId="1" waitTime="50" />
+            </While>
         </If>
 
         <!-- switch profiles -->
