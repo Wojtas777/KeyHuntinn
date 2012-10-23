@@ -1,0 +1,7 @@
+<Profile>
+    <Name>KeyHuntinn - A3 - Start</Name>
+    <GameParams quest="101758" step="1" act="A3" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1"  />
+    <Order>
+        <LoadProfile file="KeyHuntinn_A3_NV1.xml" />
+    </Order>
+</Profile>

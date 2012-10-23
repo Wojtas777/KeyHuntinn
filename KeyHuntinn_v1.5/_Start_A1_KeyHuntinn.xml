@@ -1,5 +1,5 @@
 <Profile>
-    <Name>KeyHuntinn - Start</Name>
+    <Name>KeyHuntinn - A1 - Start</Name>
     <GameParams quest="72801" step="36" act="A1" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1"  />
     <Order>
         <LoadProfile loadRandom="True">

@@ -1,5 +1,5 @@
 <Profile>
-    <Name>KeyHuntinn - Sokahr - Elderberries - Oasis</Name>
+    <Name>KeyHuntinn - Sokahr - Oasis</Name>
     <KillMonsters>True</KillMonsters>
     <PickupLoot>True</PickupLoot>
     <GameParams quest="57337" step="26" act="A2" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1" />
@@ -34,26 +34,6 @@
         <MoveTo questId="1" x="3831.642" y="4458.292" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
         <MoveTo questId="1" x="3750.941" y="4414.085" z="100.2" pathPrecision="3" unsafeRandomDistance="1" />
         <MoveTo questId="1" x="3683.871" y="4471.221" z="97.44301" pathPrecision="3" unsafeRandomDistance="1" />
-
-        <!--    Dahlgur Oasis / Old Fisherman's Cellar 
-                This code detects whether the OFC has spawned and enters it if so  -->
-        <If condition="ActorExistsAt(175467, 3657.033, 4483.086, 103.8032, 15)">
-            <MoveTo questId="1" x="3663.943" y="4481.376" z="102.3025" pathPrecision="1" unsafeRandomDistance="1" />
-            <UseObject questId="1" stepId="1" actorId="175467" isPortal="True" destinationWorldId="136932" x="3657.033" y="4483.086" z="103.8032" />
-        </If>
-
-
-         <!-- this code runs the cellar if it's inside it -->
-        <If condition="Zeta.ZetaDia.CurrentWorldId==136932">
-            <MoveTo questId="1" x="481.4187" y="486.2523" z="0.1000017" pathPrecision="3" unsafeRandomDistance="1" />
-            <MoveTo questId="1" x="515.1323" y="561.3995" z="0.1000017" pathPrecision="3" unsafeRandomDistance="1" />
-            <MoveTo questId="1" x="446.4448" y="539.006" z="0.1000038" pathPrecision="3" unsafeRandomDistance="1" />
-            <MoveTo questId="1" x="485.8375" y="405.6305" z="0.1000038" pathPrecision="1" unsafeRandomDistance="1" />
-            <UseObject questId="1" stepId="1" actorId="176007" isPortal="True" destinationWorldId="70885" x="484.9961" y="389.2942" z="5.146899" />
-        </If> 
-
-        <!-- continues run after cellar finished, or if no cellar has spawned here -->
-
         <MoveTo questId="1" x="3698.92" y="4447.24" z="98.57202" pathPrecision="3" unsafeRandomDistance="1" />
         <MoveTo questId="1" x="3760.634" y="4378.208" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
         <MoveTo questId="1" x="3733.628" y="4317.771" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
@@ -95,27 +75,6 @@
         <MoveTo questId="1" x="2789.342" y="4398.31" z="100.1002" pathPrecision="3" unsafeRandomDistance="1" />
         <MoveTo questId="1" x="2782.527" y="4460.913" z="97.66301" pathPrecision="3" unsafeRandomDistance="1" />
         <MoveTo questId="1" x="2720.793" y="4463.372" z="99.89315" pathPrecision="1" unsafeRandomDistance="1"/>
-
-        <!--    Dahlgur Oasis / Swampy Cellar
-                This code detects whether Swampy Cellar has spawned and enters it if so -->
-        <If condition="ActorExistsAt(175467, 2697.736, 4477.978, 103.7704, 15)">
-            <UseObject questId="1" stepId="1" actorId="175467" isPortal="True" destinationWorldId="162790" x="2697.736" y="4477.978" z="103.7704" />
-        </If>
-
-        <!-- runs the cellar once inside -->
-        <If condition="Zeta.ZetaDia.CurrentWorldId==162790"> 
-            <MoveTo questId="1" x="483.6547" y="490.2785" z="0.1000018" pathPrecision="3" unsafeRandomDistance="1"/>
-            <MoveTo questId="1" x="448.0976" y="488.0579" z="0.1000038" pathPrecision="3" unsafeRandomDistance="1"/>
-            <MoveTo questId="1" x="445.2358" y="557.517" z="0.1000038" pathPrecision="3" unsafeRandomDistance="1"/>
-            <MoveTo questId="1" x="521.2152" y="564.1133" z="0.1" pathPrecision="3" unsafeRandomDistance="1"/>
-            <MoveTo questId="1" x="514.7385" y="492.386" z="0.1000034" pathPrecision="3" unsafeRandomDistance="1"/>
-            <MoveTo questId="1" x="485.5576" y="471.3279" z="0.6237999" pathPrecision="3" unsafeRandomDistance="1"/>
-            <MoveTo questId="1" x="486.4052" y="394.8243" z="2.707702" pathPrecision="1" unsafeRandomDistance="1"/>
-            
-            <UseObject questId="1" stepId="1" actorId="176007" isPortal="True" destinationWorldId="70885" x="484.9961" y="389.2942" z="5.146899" />
-        </If>
-
-        <!-- continues run after cellar has finished, or if no cellar spawned this time -->
         <MoveTo questId="1" x="2778.003" y="4398.69" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
         <MoveTo questId="1" x="2792.877" y="4212.372" z="100.1467" pathPrecision="3" unsafeRandomDistance="1" />
 
@@ -126,16 +85,6 @@
         </If>
   
         <!-- switch profiles -->
-        <LoadProfile loadRandom="True">
-            <Profiles>
-                <Profile>KeyHuntinn_A1_NV1a.xml</Profile>
-                <Profile>KeyHuntinn_A1_NV1b.xml</Profile>
-                <Profile>KeyHuntinn_A2_NV1a.xml</Profile>
-                <Profile>KeyHuntinn_A2_NV1b.xml</Profile>
-                <Profile>KeyHuntinn_A3_NV1.xml</Profile>
-            </Profiles>
-        </LoadProfile>
-
-        <LeaveGame />
+        <Continue profile="_Start_A1_KeyHuntinn.xml, _Start_A2_KeyHuntinn.xml, _Start_A3_KeyHuntinn.xml" exitgame="true" />
     </Order>
  </Profile>

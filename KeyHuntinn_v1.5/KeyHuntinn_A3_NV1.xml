@@ -1,17 +1,19 @@
 <Profile>
-    <Name>KeyHuntinn - Act 3 - NV Gather 1 - BigRed - Core of Arreat</Name>
+    <Name>KeyHuntinn - Act 3 - NV Gather 1 - Core of Arreat</Name>
     <KillMonsters>True</KillMonsters>
     <PickupLoot>True</PickupLoot>
     <GameParams quest="101758" step="1" act="A3" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1"  /> 
     <Order>
         <Keyrun profile="KeyHuntinn_XahRith.xml" />
         
+        <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="80" killRadius="45" />
+
         <!-- From Town -->
         <If condition="Zeta.ZetaDia.CurrentWorldId==172909 and IsActiveQuestStep(1)">
             <MoveTo questId="1" x="402.5403" y="414.342" z="1.5338" />
             <WaitTimer questId="1" waitTime="150" />
             <UseWaypoint questId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="10" />  
-            <WaitWhile condition="Me.IsInTown" />           
+            <WaitWhile condition="Me.IsInTown">        
         </If>
         
         <!-- From Waypoint -->
