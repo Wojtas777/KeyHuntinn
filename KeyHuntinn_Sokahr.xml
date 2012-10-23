@@ -15,9 +15,11 @@
             </While>
         </If>
         
-        <If condition="Me.IsInTown==True">   
-            <UseWaypoint questId="1" x="324.2319" y="291.6554" z="1.64563" actorId="6442" waypointNumber="5" />
-            <WaitTimer WaitTime="200" />
+        <If condition="Me.IsInTown">
+            <UseWaypoint questId="1" actorId="223757" x="2981.259" y="2836.146" z="24.89399" waypointNumber="5" />
+            <While condition="Me.IsInTown">
+                <WaitTimer questId="1" waitTime="50" />
+            </While>
         </If>
 
         <!-- main profile starts here -->

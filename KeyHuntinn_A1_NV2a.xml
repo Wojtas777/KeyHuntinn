@@ -5,17 +5,15 @@
     <GameParams quest="72801" step="36" act="A1" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1"  />
     <Order>
         <Keyrun profile="KeyHuntinn_Odeg.xml" />
-        
-        <If condition="(not Me.IsInTown)">   
-            <UseTownPortal questId="1" />  
-            <While condition="not Me.IsInTown">
+
+        <If condition="Me.IsInTown">
+            <UseWaypoint questId="1" actorId="223757" x="2981.259" y="2836.146" z="24.89399" waypointNumber="8" />
+            <While condition="Me.IsInTown">
                 <WaitTimer questId="1" waitTime="50" />
             </While>
         </If>
 
         <!-- Festering Woods -->
-        <UseWaypoint questId="1" actorId="223757" x="2981.259" y="2836.146" z="24.89399" waypointNumber="8" />
-        <WaitTimer questId="1" waitTime="500" />
         <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="70" killRadius="30" />
         <MoveTo questId="1" x="1261.022" y="797.6718" z="61.18635" name="Road to Festering #1" pathPrecision="1" />
         <MoveTo questId="1" x="1257.752" y="753.2078" z="44.86698" name="Road to Festering #2" pathPrecision="1" />

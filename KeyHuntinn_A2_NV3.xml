@@ -9,16 +9,11 @@
         <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="80" killRadius="50" />
 
         <!-- port to zone if we are in Town -->
-        <If condition="(not Me.IsInTown)">   
-            <UseTownPortal questId="1" />  
-            <While condition="not Me.IsInTown">
+        <If condition="Me.IsInTown">
+            <UseWaypoint actorId="6442" questId="1" x="324.2319" y="291.6554" z="1.64563" waypointNumber="2" />
+            <While condition="Me.IsInTown">
                 <WaitTimer questId="1" waitTime="50" />
             </While>
-        </If>
-        
-        <If condition="Zeta.ZetaDia.CurrentWorldId==161472">
-            <UseWaypoint questId="1" x="324.2319" y="291.6554" z="1.64563" actorId="6442" waypointNumber="2" />
-            <WaitTimer WaitTime="200" />
         </If>
 
         <!-- whole profile set -->

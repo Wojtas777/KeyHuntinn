@@ -5,24 +5,19 @@
     <GameParams quest="57337" step="26" act="A2" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1" />
     <Order>
         <Keyrun profile="KeyHuntinn_Sokahr.xml" />
-        <!-- Mine -->
+        
         <!-- set the kill/loot radius -->
         <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="60" killRadius="50" />
 
         <!-- port to zone if we are in Town -->
-        <If condition="(not Me.IsInTown)">   
-            <UseTownPortal questId="1" />  
-            <While condition="not Me.IsInTown">
+        <If condition="Me.IsInTown">
+            <UseWaypoint actorId="6442" questId="1" x="324.2319" y="291.6554" z="1.64563" waypointNumber="2" />
+            <While condition="Me.IsInTown">
                 <WaitTimer questId="1" waitTime="50" />
             </While>
         </If>
-        
-        <If condition="Zeta.ZetaDia.CurrentWorldId==161472">
-            <UseWaypoint questId="1" x="324.2319" y="291.6554" z="1.64563" actorId="6442" waypointNumber="2" />
-            <WaitTimer WaitTime="200" />
-        </If>
 
-        <!-- whole profile set -->
+        <!-- Mine -->
         <MoveTo questId="1" x="2050.252" y="909.8565" z="169.7565"  pathPrecision="12" unsafeRandomDistance="5" />
         <MoveTo questId="1" x="2024.276" y="857.0803" z="169.9564"  pathPrecision="12" unsafeRandomDistance="5" />
         <MoveTo questId="1" x="1845.206" y="836.6644" z="169.8601"  pathPrecision="12" unsafeRandomDistance="5" />

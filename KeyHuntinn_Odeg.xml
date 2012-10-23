@@ -4,15 +4,22 @@
     <PickupLoot>True</PickupLoot>
     <GameParams quest="72801" step="36" act="A1" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1"  />
     <Order>
+        <!-- force back to town because of transfer from other profiles -->
         <If condition="(not Me.IsInTown)">   
             <UseTownPortal questId="1" />  
             <While condition="not Me.IsInTown">
                 <WaitTimer questId="1" waitTime="50" />
             </While>
         </If>
+
+        <If condition="Me.IsInTown">
+            <UseWaypoint questId="1" actorId="223757" x="2981.259" y="2836.146" z="24.89399" waypointNumber="6" />
+            <While condition="Me.IsInTown">
+                <WaitTimer questId="1" waitTime="50" />
+            </While>
+        </If>
         
         <!-- FIELDS OF MISERY -->
-        <UseWaypoint questId="1" actorId="223757" x="2981.259" y="2836.146" z="24.89399" waypointNumber="6" />
         <WaitTimer questId="1" waitTime="1000" />
         <MoveTo questId="1" x="2121.411" y="1776.784" z="0.345872" name="Scarry Place again..." />
         <MoveTo questId="1" x="2109.564" y="1721.362" z="0.1000002" name="Gate" />

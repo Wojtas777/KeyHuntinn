@@ -6,13 +6,6 @@
     <Order>
         <Keyrun profile="KeyHuntinn_XahRith.xml" />
         <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="80" killRadius="45" />
-        
-        <If condition="(not Me.IsInTown)">   
-            <UseTownPortal questId="1" />  
-            <While condition="not Me.IsInTown">
-                <WaitTimer questId="1" waitTime="50" />
-            </While>
-        </If>
 
         <!-- From Town -->
         <If condition="Zeta.ZetaDia.CurrentWorldId==172909">
