@@ -16,7 +16,7 @@
             <MoveTo questId="1" x="402.5403" y="414.342" z="1.5338" />
             <WaitTimer questId="1" waitTime="150" />
             <UseWaypoint questId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="1" />   
-            <WaitWhile condition="Me.IsInTown">
+            <WaitWhile condition="Me.IsInTown" />
         </If>
         
         
