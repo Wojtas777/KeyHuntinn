@@ -1,0 +1,12 @@
+<Profile>
+    <Name>KeyHuntinn - Start</Name>
+    <GameParams quest="72801" step="36" act="A1" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1"  />
+    <Order>
+        <LoadProfile loadRandom="True">
+            <Profiles>
+                <Profile>KeyHuntinn_A1_NV1a.xml</Profile>
+                <Profile>KeyHuntinn_A1_NV1b.xml</Profile>
+            </Profiles>
+        </LoadProfile>
+    </Order>
+</Profile>
