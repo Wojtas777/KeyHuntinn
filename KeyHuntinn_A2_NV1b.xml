@@ -1,5 +1,5 @@
 <Profile>
-    <Name>KeyHuntinn - Act 2 - NV Gather 1b - Elderberries - Mine B</Name>
+    <Name>KeyHuntinn - Act 2 - NV Gather 1b - Mine B</Name>
     <KillMonsters>True</KillMonsters>
     <PickupLoot>True</PickupLoot>
     <GameParams quest="57337" step="26" act="A2" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1" />
@@ -12,9 +12,7 @@
         <!-- port to zone if we are in Town -->
         <If condition="Me.IsInTown">
             <UseWaypoint actorId="6442" questId="1" x="324.2319" y="291.6554" z="1.64563" waypointNumber="2" />
-            <While condition="Me.IsInTown">
-                <WaitTimer questId="1" waitTime="50" />
-            </While>
+            <WaitWhile condition="Me.IsInTown" />
         </If>
 
         <!-- Mine -->
@@ -36,15 +34,17 @@
         <MoveTo questId="1" x="1853.431" y="993.4199" z="169.7565"  pathPrecision="12" unsafeRandomDistance="5" />
 
         <!-- Go back to Town -->
-        <If condition="(not Me.IsInTown)">   
+        <If condition="not Me.IsInTown">   
             <UseTownPortal questId="1" />  
-            <While condition="not Me.IsInTown">
-                <WaitTimer questId="1" waitTime="50" />
-            </While>
+            <WaitWhile condition="not Me.IsInTown" />
         </If>       
 
         <!-- switch profiles using random versions -->
-        <Continue profile="KeyHuntinn_A2_NV2a.xml, KeyHuntinn_A2_NV2b.xml" />
+        <LoadProfile loadRandom="True">
+            <Profiles>
+                <Profile>KeyHuntinn_A2_NV2a.xml</Profile>
+                <Profile>KeyHuntinn_A2_NV2b.xml</Profile>
+            </Profiles>
+        </LoadProfile>
     </Order>
-
  </Profile>
