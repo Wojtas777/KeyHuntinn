@@ -5,7 +5,7 @@
     <GameParams quest="72801" step="36" act="A1" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1"  />
     <Order>
         <!-- force back to town because of transfer from other profiles -->
-        <If condition="not Me.IsInTown">   
+        <If condition="(not Me.IsInTown) and (not Zeta.ZetaDia.CurrentLevelAreaId==19952)">   
             <UseTownPortal questId="1" />  
             <WaitWhile condition="not Me.IsInTown" />
         </If>
@@ -48,7 +48,7 @@
             <MoveTo questId="1" x="2248.932" y="1058.559" z="0.2" name="Its over" />
         </If>
         
-        <If condition="CurrentWorldId==71150">
+        <If condition="CurrentWorldId==71150 and (not ActorExistsAt(255996, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100))">
             <MoveTo questId="1" x="2269.214" y="1106.785" z="0.1000002" name="FoM #9" />
             <MoveTo questId="1" x="2364.017" y="983.1815" z="0.1000002" name="FoM #10" />
             <MoveTo questId="1" x="2404.808" y="955.7382" z="0.1000002" name="FoM #11" />
@@ -71,7 +71,7 @@
             <MoveTo questId="1" x="2140.051" y="625.8022" z="0.1" name="Its over" />
         </If>
         
-        <If condition="CurrentWorldId==71150">
+        <If condition="CurrentWorldId==71150 and (not ActorExistsAt(255996, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100))">
             <MoveTo questId="1" x="2131.725" y="458.1083" z="0.1" name="FoM #20" />
             <MoveTo questId="1" x="2099.149" y="437.1093" z="0.1000004" pathPrecision="3" />
             <MoveTo questId="1" x="2034.371" y="486.1959" z="0.1" pathPrecision="3" />
@@ -91,6 +91,25 @@
             <MoveTo questId="1" x="1673.615" y="456.8197" z="0.1000005" name="FoM #34" />
             <MoveTo questId="1" x="1609.576" y="369.2259" z="0.1000001" name="Chuck Chuck" />
         </If>
+
+        <!-- Key Warden Odeg -->
+        <If condition="ActorExistsAt(255996, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100)">
+            <LogMessage output="Odeg found" />
+            <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="50" killRadius="125" />
+            <While condition="ActorExistsAt(255996, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100)">
+                <TrinityMoveToSNO questId="1" snoid="255996" pathPrecision="5" />
+            </While>
+            <LogMessage output="Odeg killed" />
+            <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="50" killRadius="50" />
+            <WaitTimer questId="1" waitTime="1000" />
+        </If>
+
+        <If condition="not Me.IsInTown">   
+            <UseTownPortal questId="1" />  
+            <WaitWhile condition="not Me.IsInTown" />
+        </If>
+
+        <WaitTimer questId="1" waitTime="1000" />
 
         <Continue profile="A1_Start_KeyHuntinn.xml, A2_Start_KeyHuntinn.xml, A3_Start_KeyHuntinn.xml" />
         <LeaveGame reason="Act 1 Done" />
