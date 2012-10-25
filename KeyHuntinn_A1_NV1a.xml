@@ -1,4 +1,4 @@
-<Profile>
+<Profile xmlns="http://tempuri.org/ProfileSchema.xsd" xmlns:xsi="http://tempuri.org/ProfileSchema.xsd">
     <Name>KeyHuntinn - Act 1 - NV Gather 1a - Leoric's Manor + Leoric's Hunting Grounds A</Name>
     <KillMonsters>True</KillMonsters>
     <PickupLoot>True</PickupLoot>

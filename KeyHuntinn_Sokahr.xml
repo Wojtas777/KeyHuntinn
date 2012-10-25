@@ -1,4 +1,4 @@
-<Profile>
+<Profile xmlns="http://tempuri.org/ProfileSchema.xsd" xmlns:xsi="http://tempuri.org/ProfileSchema.xsd">
     <Name>KeyHuntinn - Sokahr - Oasis</Name>
     <KillMonsters>True</KillMonsters>
     <PickupLoot>True</PickupLoot>
@@ -16,6 +16,16 @@
         <If condition="Me.IsInTown">
             <UseWaypoint actorId="6442" questId="1" x="324.2319" y="291.6554" z="1.64563" waypointNumber="5" />
             <WaitWhile condition="Me.IsInTown" />
+            <While condition="(not Zeta.ZetaDia.CurrentLevelAreaId==57425)">
+                <If condition="Me.IsInTown">
+                    <UseWaypoint actorId="6442" questId="1" x="324.2319" y="291.6554" z="1.64563" waypointNumber="5" />
+                    <WaitWhile condition="Me.IsInTown" />
+                </If>
+                <If condition="not Me.IsInTown">
+                    <UseTownPortal questId="1" />  
+                    <WaitWhile condition="not Me.IsInTown" />
+                </If>
+            </While>
         </If>
 
         <!-- main profile starts here -->

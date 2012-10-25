@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:mstns="http://tempuri.org/ProfileSchema.xsd" xmlns="http://tempuri.org/ProfileSchema.xsd" elementFormDefault="qualified" targetNamespace="http://tempuri.org/ProfileSchema.xsd" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Profile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Name" type="xs:string" />
+        <xs:element name="GameParams">
+          <xs:complexType>
+            <xs:attribute name="quest" type="xs:int" use="required" />
+            <xs:attribute name="step" type="xs:int" use="required" />
+            <xs:attribute name="act" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="A1" />
+                  <xs:enumeration value="A2" />
+                  <xs:enumeration value="A3" />
+                  <xs:enumeration value="A4" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="difficulty" type="xs:string" use="required" />
+            <xs:attribute name="resumeFromSave" type="xs:string" use="optional" />
+            <xs:attribute name="isPrivate" type="xs:string" use="optional" />
+            <xs:attribute name="numGames" type="xs:byte" use="optional" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="KillMonsters" type="PythonBoolean" />
+        <xs:element name="PickupLoot" type="PythonBoolean" />
+        <xs:element name="Order" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:group maxOccurs="unbounded" ref="OrderElements" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:group name="OrderElements">
+    <xs:choice>
+      <xs:element name="ExploreArea" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attributeGroup ref="OrderAttr" />
+          <xs:attribute name="until" type="ExploreAreaEndType" use="required" />
+          <xs:attribute name="leaveWhenFinished" type="PythonBoolean" use="optional" />
+          <xs:attribute name="exitNameHash" type="xs:int" use="optional" />
+          <xs:attribute name="boxSize" type="xs:unsignedInt" use="required" />
+          <xs:attribute name="boxTolerance" type="xs:decimal" use="required" />
+          <xs:attribute name="actorId" type="xs:unsignedInt" use="optional" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LeaveGame" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="reason" type="xs:string" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LoadProfile" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="profile" type="xs:string" use="required" />
+          <xs:attribute name="loadRandom" type="PythonBoolean" use="optional" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LogMessage" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="logLevel" type="LogLevelType" use="optional" />
+          <xs:attribute name="message" type="xs:string" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MoveTo" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attributeGroup ref="OrderAttr" />
+          <xs:attribute name="x" type="xs:decimal" use="required" />
+          <xs:attribute name="y" type="xs:decimal" use="required" />
+          <xs:attribute name="z" type="xs:decimal" use="required" />
+          <xs:attribute name="pathPrecision" type="xs:decimal" use="optional" />
+          <xs:attribute name="unsafeRandomDistance" type="xs:decimal" use="optional" />
+          <xs:attribute name="straightLinePathing" type="PythonBoolean" use="optional" />
+          <xs:attribute name="name" type="xs:string" use="optional" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SkipCutscene" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attributeGroup ref="OrderAttr" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UseObject" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attributeGroup ref="OrderAttr" />
+          <xs:attribute name="actorId" type="xs:unsignedInt" use="required" />
+          <xs:attributeGroup ref="PositionOptional" />
+          <xs:attribute name="interactRange" type="xs:decimal" use="optional" />
+          <xs:attribute name="isPortal" type="PythonBoolean" use="optional" />
+          <xs:attribute name="destinationWorldId" type="xs:unsignedInt" use="optional" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UsePower" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attributeGroup ref="OrderAttr" />
+          <xs:attribute name="powerId" type="xs:unsignedInt" use="required" />
+          <xs:attribute name="x" type="xs:decimal" use="optional" />
+          <xs:attribute name="y" type="xs:decimal" use="optional" />
+          <xs:attribute name="z" type="xs:decimal" use="optional" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UseTownPortal" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attributeGroup ref="OrderAttr" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UseWaypoint" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attributeGroup ref="OrderAttr" />
+          <xs:attributeGroup ref="PositionOptional"/>
+          <xs:attribute name="waypointNumber" type="xs:unsignedInt" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WaitTimer" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attributeGroup ref="OrderAttr" />
+          <xs:attribute name="waitTime" type="xs:unsignedInt" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WaitWhile" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="condition" type="xs:string" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WriteReport" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="If" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:choice maxOccurs="unbounded">
+            <xs:group ref="OrderElements" />
+          </xs:choice>
+          <xs:attribute name="condition" type="xs:string" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="While" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:choice maxOccurs="unbounded">
+            <xs:group ref="OrderElements" />
+          </xs:choice>
+          <xs:attribute name="condition" type="xs:string" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ToggleTargeting" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attributeGroup ref="OrderAttr" />
+          <xs:attribute name="combat" type="PythonBoolean" use="required" />
+          <xs:attribute name="looting" type="PythonBoolean" use="required" />
+          <xs:attribute name="lootRadius" type="xs:decimal" use="required" />
+          <xs:attribute name="killRadius" type="xs:decimal" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TalkTo" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attributeGroup ref="OrderAttr" />
+          <xs:attributeGroup ref="PositionRequired" />
+          <xs:attribute name="actorId" type="xs:unsignedInt" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+  </xs:group>
+  <xs:simpleType name="ExploreAreaEndType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FullyExplored"/>
+      <xs:enumeration value="ExitFound"/>
+      <xs:enumeration value="ObjectFound"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PythonBoolean">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="True"/>
+      <xs:enumeration value="False"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="LogLevelType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None"/>
+      <xs:enumeration value="Quiet"/>
+      <xs:enumeration value="Normal"/>
+      <xs:enumeration value="Verbose"/>
+      <xs:enumeration value="Diagnostic"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attributeGroup name="PositionRequired">
+    <xs:attribute name="x" type="xs:decimal" use="required" />
+    <xs:attribute name="y" type="xs:decimal" use="required" />
+    <xs:attribute name="z" type="xs:decimal" use="required" />
+  </xs:attributeGroup>
+  <xs:attributeGroup name="PositionOptional">
+    <xs:attribute name="x" type="xs:decimal" use="optional" />
+    <xs:attribute name="y" type="xs:decimal" use="optional" />
+    <xs:attribute name="z" type="xs:decimal" use="optional" />
+  </xs:attributeGroup>
+  <xs:attributeGroup name="OrderAttr">
+    <xs:attribute name="questId" type="xs:string" use="optional" />
+    <xs:attribute name="stepId" type="xs:int" use="optional" />
+    <xs:attribute name="questName" type="xs:string" use="optional" />
+    <xs:attribute name="statusText" type="xs:string" use="optional" />
+    <xs:attribute name="ignoreReset" type="PythonBoolean" use="optional" />
+  </xs:attributeGroup>
+
+  <xs:complexType name="Hotspot">
+    <xs:choice>
+      <xs:sequence minOccurs="1" maxOccurs="unbounded">
+        <xs:element name="Hotspot">
+          <xs:complexType>
+            <xs:attributeGroup ref="PositionRequired" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:choice>
+  </xs:complexType>
+</xs:schema>

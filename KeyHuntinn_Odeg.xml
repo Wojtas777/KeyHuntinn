@@ -1,4 +1,4 @@
-<Profile>
+<Profile xmlns="http://tempuri.org/ProfileSchema.xsd" xmlns:xsi="http://tempuri.org/ProfileSchema.xsd">
     <Name>KeyHuntinn - Act 1 - Odeg - Fields of Misery</Name>
     <KillMonsters>True</KillMonsters>
     <PickupLoot>True</PickupLoot>
@@ -13,6 +13,16 @@
         <If condition="Me.IsInTown">
             <UseWaypoint questId="1" actorId="223757" x="2981.259" y="2836.146" z="24.89399" waypointNumber="6" />
             <WaitWhile condition="Me.IsInTown" />
+            <While condition="(not Zeta.ZetaDia.CurrentLevelAreaId==19952)">
+                <If condition="Me.IsInTown">
+                    <UseWaypoint questId="1" actorId="223757" x="2981.259" y="2836.146" z="24.89399" waypointNumber="6" />
+                    <WaitWhile condition="Me.IsInTown" />
+                </If>
+                <If condition="not Me.IsInTown">
+                    <UseTownPortal questId="1" />  
+                    <WaitWhile condition="not Me.IsInTown" />
+                </If>
+            </While>
         </If>
         
         <While condition="not ActorExistsAt(255996, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100)">
