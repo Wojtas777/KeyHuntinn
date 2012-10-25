@@ -175,7 +175,7 @@
 
         <WaitTimer questId="1" waitTime="1000" />
 
-        <Continue profile="A1_Start_KeyHuntinn.xml, A2_Start_KeyHuntinn.xml, A3_Start_KeyHuntinn.xml" />
+        <Continue profile="A1_Start_KeyHuntinn.xml, A2_Start_KeyHuntinn.xml" />
         <LeaveGame reason="Act 3 Done" />
     </Order>
 </Profile>  
