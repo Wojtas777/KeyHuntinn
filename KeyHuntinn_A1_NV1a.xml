@@ -4,14 +4,16 @@
     <PickupLoot>True</PickupLoot>
     <GameParams quest="72801" step="36" act="A1" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1"  />
     <Order>
+        <!-- Set key warden profile -->
         <Keyrun profile="KeyHuntinn_Odeg.xml" />
 
+        <!-- WP to zone if in town -->
         <If condition="Me.IsInTown">
             <UseWaypoint questId="1" actorId="223757" x="2981.259" y="2836.146" z="24.89399" waypointNumber="13" />
             <WaitWhile condition="Me.IsInTown" />
         </If>
 
-        <!-- Leorics Manor Waypoint -->
+        <!-- Leoric's Manor Waypoint -->
         <If condition="ActorExistsAt(6442, 370.1328, 331.2119, 15.43506, 40) and CurrentWorldId == 75049"> 
             <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="30" killRadius="30" />
             <MoveTo questId="1" x="370.0969" y="364.3543" z="12.94672" name="Manor #1" />
@@ -29,7 +31,7 @@
             <MoveTo questId="1" x="367.9908" y="761.2645" z="3.240645" name="Manor #FinalStep" />  
         </If>
         
-        <!-- Leorics Manor Checkpoint before Manor Courtyard -->
+        <!-- Leoric's Manor Checkpoint before Manor Courtyard -->
         <If condition="ActorExistsAt(176536, 369.8021, 779.1453, 3.733951, 40) and CurrentWorldId == 75049"> 
             <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="80" killRadius="60" />    
                 <While condition="CurrentWorldId == 75049">
@@ -38,7 +40,7 @@
             <WaitTimer questId="1" waitTime="250" />
         </If>
         
-        <!-- Leorics Manor Courtyard -->
+        <!-- Leoric's Manor Courtyard -->
         <If condition="ActorExistsAt(176001, 1079.47, 3379.56, 66.53082, 40) and CurrentWorldId == 71150"> 
             <MoveTo questId="1" x="1077.335" y="3535.774" z="78.52599" name="Outside Manor #1" pathPrecision="1" />
             <MoveTo questId="1" x="951.3288" y="3484.345" z="78.09126" name="Outside Manor #2" pathPrecision="1" />
@@ -78,11 +80,13 @@
             <MoveTo questId="1" x="1142.127" y="3777.766" z="80.10001" name="Hunting Grounds #21" pathPrecision="1" unsafeRandomDistance="5" />
         </If>
         
+        <!-- go back to town for next profile -->
         <If condition="not Me.IsInTown">   
             <UseTownPortal questId="1" />  
             <WaitWhile condition="not Me.IsInTown" />
         </If>
 
+        <!-- load A1 NV2 -->
         <LoadProfile loadRandom="True">
             <Profiles>
                 <Profile>KeyHuntinn_A1_NV2a.xml</Profile>

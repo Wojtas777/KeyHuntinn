@@ -19,7 +19,7 @@
         </If>
 
         <!-- main profile starts here -->
-        <If condition="not ActorExistsAt(256000, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 150)">
+        <While condition="not ActorExistsAt(256000, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100)">
             <MoveTo questId="1" x="4225.771" y="4402.414" z="94.58954" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="4217.627" y="4474.988" z="97.13789" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="4154.598" y="4523.951" z="100.1446" pathPrecision="3" unsafeRandomDistance="1" />
@@ -78,17 +78,15 @@
             <MoveTo questId="1" x="2720.793" y="4463.372" z="99.89315" pathPrecision="1" unsafeRandomDistance="1"/>
             <MoveTo questId="1" x="2778.003" y="4398.69" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="2792.877" y="4212.372" z="100.1467" pathPrecision="3" unsafeRandomDistance="1" />
-        </If>
+        </While>
 
         <!-- Key Warden Sokahr -->
         <If condition="ActorExistsAt(256000, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100)">
             <LogMessage output="Sokahr found" />
-            <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="50" killRadius="125" />
             <While condition="ActorExistsAt(256000, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100)">
                 <TrinityMoveToSNO questId="1" snoid="256000" pathPrecision="5" />
             </While>
             <LogMessage output="Sokahr killed" />
-            <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="50" killRadius="50" />
             <WaitTimer questId="1" waitTime="1000" />
         </If>
 

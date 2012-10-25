@@ -4,8 +4,10 @@
     <PickupLoot>True</PickupLoot>
     <GameParams quest="72801" step="36" act="A1" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1"  />
     <Order>
+        <!-- Set key warden profile -->
         <Keyrun profile="KeyHuntinn_Odeg.xml" />
 
+        <!-- WP to zone if in town -->
         <If condition="Me.IsInTown">
             <UseWaypoint questId="1" actorId="223757" x="2981.259" y="2836.146" z="24.89399" waypointNumber="13" />
             <WaitWhile condition="Me.IsInTown" />
@@ -74,11 +76,13 @@
             <MoveTo questId="1" x="914.9922" y="3711.282" z="80.09999" name="Hunting Grounds #18" pathPrecision="1" unsafeRandomDistance="5" />
         </If>
         
+        <!-- go back to town for next profile -->
         <If condition="not Me.IsInTown">   
             <UseTownPortal questId="1" />  
             <WaitWhile condition="not Me.IsInTown" />
         </If>
 
+        <!-- load A1 NV2 -->
         <LoadProfile loadRandom="True">
             <Profiles>
                 <Profile>KeyHuntinn_A1_NV2a.xml</Profile>
