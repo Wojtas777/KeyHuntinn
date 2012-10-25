@@ -55,7 +55,6 @@
             <WaitWhile condition="not Me.IsInTown" />
         </If>
 
-        <!-- switch profiles using random versions -->
         <LoadProfile file="KeyHuntinn_A2_NV3.xml" />
     </Order>
  </Profile>

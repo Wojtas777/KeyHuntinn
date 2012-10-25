@@ -56,8 +56,7 @@
             <UseTownPortal questId="1" />  
             <WaitWhile condition="not Me.IsInTown" />
         </If>
-
-        <!-- switch profiles using random versions -->
+        
         <LoadProfile file="KeyHuntinn_A2_NV4.xml" />
     </Order>
  </Profile>
