@@ -22,113 +22,122 @@
         </If>
         
 
-        <!-- Checkpoint outside door -->    
-        <If condition="ActorExistsAt(3795, 3810.261, 3706.156, -25.00002, 50) and ZetaDia.CurrentWorldId == 81019">
-            <WaitTimer questId="1" waitTime="500" />
-            <MoveTo questId="1" x="3806.902" y="3786.704" z="-24.71773" pathPrecision="10" name="Skycrown-01" />
-            <MoveTo questId="1" x="3778.832" y="3785.78" z="-24.71773" pathPrecision="10" name="Skycrown-02" />
-            <MoveTo questId="1" x="3778.844" y="3729.716" z="0.2649761"  name="Skycrown-03" />
-            <MoveTo questId="1" x="3709.603" y="3721.734" z="0.1001671" pathPrecision="10" name="Skycrown-04" />
-            <MoveTo questId="1" x="3713.02" y="3696.031" z="0.1969986" pathPrecision="3" name="Skycrown-04" />
-            
-            <TrinityUseOnce questId="1" id="100" max="2">
-                <MoveTo questId="1" x="3707.538" y="3631.271" z="25.24764" name="SideStairs10-01" />
-                <MoveTo questId="1" x="3652.316" y="3631.594" z="25.24764" pathPrecision="3" name="SideStairs10-02" />
-                <TrinityUseStop id="100" />
-            </TrinityUseOnce>
+        <While condition="NephalemValorCount() &lt; 5">
+            <!-- Checkpoint outside door -->    
+            <If condition="ActorExistsAt(3795, 3810.261, 3706.156, -25.00002, 50) and ZetaDia.CurrentWorldId == 81019">
+                <WaitTimer questId="1" waitTime="500" />
+                <MoveTo questId="1" x="3806.902" y="3786.704" z="-24.71773" pathPrecision="10" name="Skycrown-01" />
+                <MoveTo questId="1" x="3778.832" y="3785.78" z="-24.71773" pathPrecision="10" name="Skycrown-02" />
+                <MoveTo questId="1" x="3778.844" y="3729.716" z="0.2649761"  name="Skycrown-03" />
+                <MoveTo questId="1" x="3709.603" y="3721.734" z="0.1001671" pathPrecision="10" name="Skycrown-04" />
+                <MoveTo questId="1" x="3713.02" y="3696.031" z="0.1969986" pathPrecision="3" name="Skycrown-04" />
+                
+                <TrinityUseOnce questId="1" id="100" max="2">
+                    <MoveTo questId="1" x="3707.538" y="3631.271" z="25.24764" name="SideStairs10-01" />
+                    <MoveTo questId="1" x="3652.316" y="3631.594" z="25.24764" pathPrecision="3" name="SideStairs10-02" />
+                    <TrinityUseStop id="100" />
+                </TrinityUseOnce>
 
-            <MoveTo questId="1" x="3647.319" y="3694.476" z="0.264978" name="Skycrown-07" />
-            <MoveTo questId="1" x="3608.074" y="3696.041" z="0.1001679" pathPrecision="10" name="Skycrown-08" />
-            <MoveTo questId="1" x="3537.811" y="3751.794" z="0.1000019" name="Skycrown-09" />
-            
-            <TrinityUseOnce questId="1" id="101" max="2" >
-                <MoveTo questId="1" x="3408.872" y="3769.835" z="2.849746" pathPrecision="3" name="Side20-01" />
-                <MoveTo questId="1" x="3408.872" y="3769.835" z="2.849746" pathPrecision="3" name="Side20-02" />
-                <MoveTo questId="1" x="3533.073" y="3744.558" z="0.1405149" pathPrecision="3" name="Side20-03" />
-                <TrinityUseStop id="101" />
-            </TrinityUseOnce>
-            
-            <MoveTo questId="1" x="3523.633" y="3685.622" z="25.25825"  name="Skycrown-13" />
-            <MoveTo questId="1" x="3457.982" y="3672.501" z="25.25825" pathPrecision="10" name="Skycrown-14" />     
-            <MoveTo questId="1" x="3456.976" y="3617.623" z="0.2546043" name="Skycrown-14" />
-                        
-            <TrinityUseOnce questId="1" id="102" max="2" >          
-                <MoveTo questId="1" x="3411.7" y="3632.692" z="0.2151312" pathPrecision="3"  name="Side30-01" />
-                <MoveTo questId="1" x="3409.821" y="3728.411" z="0.1000038" pathPrecision="3" name="Side30-02" />
-                <MoveTo questId="1" x="3414.886" y="3633.017" z="0.1037771" pathPrecision="3" name="Side30-03" />
-                <TrinityUseStop id="102" />
-            </TrinityUseOnce>
+                <MoveTo questId="1" x="3647.319" y="3694.476" z="0.264978" name="Skycrown-07" />
+                <MoveTo questId="1" x="3608.074" y="3696.041" z="0.1001679" pathPrecision="10" name="Skycrown-08" />
+                <MoveTo questId="1" x="3537.811" y="3751.794" z="0.1000019" name="Skycrown-09" />
+                
+                <TrinityUseOnce questId="1" id="101" max="2" >
+                    <MoveTo questId="1" x="3408.872" y="3769.835" z="2.849746" pathPrecision="3" name="Side20-01" />
+                    <MoveTo questId="1" x="3408.872" y="3769.835" z="2.849746" pathPrecision="3" name="Side20-02" />
+                    <MoveTo questId="1" x="3533.073" y="3744.558" z="0.1405149" pathPrecision="3" name="Side20-03" />
+                    <TrinityUseStop id="101" />
+                </TrinityUseOnce>
+                
+                <MoveTo questId="1" x="3523.633" y="3685.622" z="25.25825"  name="Skycrown-13" />
+                <MoveTo questId="1" x="3457.982" y="3672.501" z="25.25825" pathPrecision="10" name="Skycrown-14" />     
+                <MoveTo questId="1" x="3456.976" y="3617.623" z="0.2546043" name="Skycrown-14" />
+                            
+                <TrinityUseOnce questId="1" id="102" max="2" >          
+                    <MoveTo questId="1" x="3411.7" y="3632.692" z="0.2151312" pathPrecision="3"  name="Side30-01" />
+                    <MoveTo questId="1" x="3409.821" y="3728.411" z="0.1000038" pathPrecision="3" name="Side30-02" />
+                    <MoveTo questId="1" x="3414.886" y="3633.017" z="0.1037771" pathPrecision="3" name="Side30-03" />
+                    <TrinityUseStop id="102" />
+                </TrinityUseOnce>
 
-            <MoveTo questId="1" x="3456.746" y="3605.131" z="0.1000019" pathPrecision="3" name="Skycrown-17" />
-            <MoveTo questId="1" x="3499.69" y="3532.86" z="0.1" pathPrecision="3" name="Skycrown-18" />
+                <MoveTo questId="1" x="3456.746" y="3605.131" z="0.1000019" pathPrecision="3" name="Skycrown-17" />
+                <MoveTo questId="1" x="3499.69" y="3532.86" z="0.1" pathPrecision="3" name="Skycrown-18" />
+                
+                <TrinityUseOnce questId="1" id="103" max="2" >
+                    <MoveTo questId="1" x="3569.529" y="3527.465" z="25.25703"  name="SideStairs40-01" />       
+                    <MoveTo questId="1" x="3562.847" y="3432.293" z="50.14566"  name="SideStairs40-02" />   
+                    <MoveTo questId="1" x="3519.037" y="3397.82" z="50.40414" pathPrecision="3" name="SideStairs40-03" />   
+                    <MoveTo questId="1" x="3430.607" y="3396.785" z="25.27321"  name="SideStairs40-04" />   
+                    <MoveTo questId="1" x="3429.477" y="3459.682" z="0.1210347"  name="SideStairs40-05" />
+                    <TrinityUseStop id="103" />
+                </TrinityUseOnce>
+                
+                <MoveTo questId="1" x="3463.435" y="3497.426" z="0.1000001" pathPrecision="10" name="Skycrown-25" />
+                <MoveTo questId="1" x="3430.303" y="3460.697" z="0.1000038" pathPrecision="10" name="Skycrown-26" />            
+                <MoveTo questId="1" x="3277.417" y="3448.965" z="0.1000019" pathPrecision="10" name="Skycrown-26" />
+                <MoveTo questId="1" x="3201.599" y="3477.018" z="0.1000019" pathPrecision="10" name="Skycrown-27" />
+                <MoveTo questId="1" x="3125.376" y="3495.188" z="0.1000019" pathPrecision="10" name="Skycrown-28" />
+                <MoveTo questId="1" x="3198.261" y="3480.627" z="0.1000006" pathPrecision="10" name="Skycrown-29" />
+                <WaitTimer questId="1" waitTime="250" />
+            </If>
             
-            <TrinityUseOnce questId="1" id="103" max="2" >
-                <MoveTo questId="1" x="3569.529" y="3527.465" z="25.25703"  name="SideStairs40-01" />       
-                <MoveTo questId="1" x="3562.847" y="3432.293" z="50.14566"  name="SideStairs40-02" />   
-                <MoveTo questId="1" x="3519.037" y="3397.82" z="50.40414" pathPrecision="3" name="SideStairs40-03" />   
-                <MoveTo questId="1" x="3430.607" y="3396.785" z="25.27321"  name="SideStairs40-04" />   
-                <MoveTo questId="1" x="3429.477" y="3459.682" z="0.1210347"  name="SideStairs40-05" />
-                <TrinityUseStop id="103" />
-            </TrinityUseOnce>
-            
-            <MoveTo questId="1" x="3463.435" y="3497.426" z="0.1000001" pathPrecision="10" name="Skycrown-25" />
-            <MoveTo questId="1" x="3430.303" y="3460.697" z="0.1000038" pathPrecision="10" name="Skycrown-26" />            
-            <MoveTo questId="1" x="3277.417" y="3448.965" z="0.1000019" pathPrecision="10" name="Skycrown-26" />
-            <MoveTo questId="1" x="3201.599" y="3477.018" z="0.1000019" pathPrecision="10" name="Skycrown-27" />
-            <MoveTo questId="1" x="3125.376" y="3495.188" z="0.1000019" pathPrecision="10" name="Skycrown-28" />
-            <MoveTo questId="1" x="3198.261" y="3480.627" z="0.1000006" pathPrecision="10" name="Skycrown-29" />
-            <WaitTimer questId="1" waitTime="250" />
-        </If>
-        
-        <!-- Checkpoint --> 
-        <If condition="ActorExistsAt(3795, 3198.261, 3480.627, 0.1000006, 50) and ZetaDia.CurrentWorldId == 81019">
-            <WaitTimer questId="1" waitTime="250" />
-            <MoveTo questId="1" x="3101.86" y="3449.628" z="0.4667553" pathPrecision="10" name="Skycrown-30" />
-            <MoveTo questId="1" x="2995.714" y="3454.829" z="25.27348"  name="Skycrown-31" />
-            
-            <TrinityUseOnce questId="1" id="104" max="2" >
-                <MoveTo questId="1" x="2994.417" y="3538.722" z="25.27348" name="SideStairs50-01" /> 
-                <MoveTo questId="1" x="2900.844" y="3540.563" z="0.3137349"  name="SideStairs50-02" />
-                <MoveTo questId="1" x="2915.603" y="3389.721" z="-24.83912"  name="SideStairs50-03" />
-                <MoveTo questId="1" x="2999.135" y="3383.727" z="0.3137369"  name="SideStairs50-04" />
-                <TrinityUseStop id="104" />
-            </TrinityUseOnce>
-            
-            <MoveTo questId="1" x="2993.641" y="3300.518" z="0.1" pathPrecision="10" name="Skycrown-36" />
-            <MoveTo questId="1" x="3050.137" y="3301.203" z="0.2452693" pathPrecision="10" name="Skycrown-37" />
-            <MoveTo questId="1" x="3047.89" y="3245.227" z="25.14568"  name="Skycrown-38" />
-            <MoveTo questId="1" x="2977.284" y="3195.36" z="25.14568" pathPrecision="10" name="Skycrown-39" />
-            <MoveTo questId="1" x="2938.865" y="3198.563" z="25.14568" pathPrecision="10" name="Skycrown-40" />
-            <MoveTo questId="1" x="2937.759" y="3248.76" z="0.2452713"  name="Skycrown-41" />
-            <MoveTo questId="1" x="2895.201" y="3248.482" z="0.1000019" pathPrecision="3" name="Skycrown-45" />
-            <MoveTo questId="1" x="2848.012" y="3231.02" z="0.2594715" pathPrecision="3" name="Skycrown-46" />
-            <MoveTo questId="1" x="2810.248" y="3223.343" z="0.1000029" pathPrecision="3" name="Skycrown-43" />
-            
-            <TrinityUseOnce questId="1" id="105" max="2" disableprevious="true">
-                <MoveTo questId="1" x="2808.766" y="3294.938" z="25.283"  name="SideStairs60-01" /> 
-                <MoveTo questId="1" x="2741.432" y="3293.088" z="25.283" pathPrecision="3" name="SideStairs60-02" /> 
-                <MoveTo questId="1" x="2717.971" y="3275.175" z="25.14622" pathPrecision="3" name="SideStairs60-03" /> 
-                <MoveTo questId="1" x="2703.083" y="3236.926" z="25.283" pathPrecision="3" name="SideStairs60-04" /> 
-                <MoveTo questId="1" x="2704.886" y="3189.337" z="25.283" pathPrecision="3" name="SideStairs60-05" /> 
-                <TrinityUseStop id="105" />
-            </TrinityUseOnce>
-            
-            <MoveTo questId="1" x="2769.918" y="3189.758" z="0.1000004"  name="Skycrown-49" />      
-            <MoveTo questId="1" x="2777.784" y="3144.406" z="0.1000038" pathPrecision="10" name="Skycrown-50" />
-            <MoveTo questId="1" x="2788.821" y="3051.818" z="0.2743774" pathPrecision="10" name="Skycrown-51" />
-            <MoveTo questId="1" x="2785.716" y="2900.283" z="0.3870824" pathPrecision="10" name="Skycrown-52" />
-            <MoveTo questId="1" x="2777.866" y="2812.354" z="0.1000076" pathPrecision="3" name="Skycrown-53" />
-            <MoveTo questId="1" x="2848.461" y="2804.812" z="25.10311"  name="Skycrown-55" />
-            <MoveTo questId="1" x="2842.07" y="2713.649" z="50.14565"  name="Skycrown-56" />
-            <MoveTo questId="1" x="2810.94" y="2683.616" z="50.14565" pathPrecision="10" name="Skycrown-57" />          
-            <MoveTo questId="1" x="2716.269" y="2676.697" z="25.10311"  name="Skycrown-58" />
-        </If>
-          
+            <!-- Checkpoint --> 
+            <If condition="ActorExistsAt(3795, 3198.261, 3480.627, 0.1000006, 50) and ZetaDia.CurrentWorldId == 81019">
+                <WaitTimer questId="1" waitTime="250" />
+                <MoveTo questId="1" x="3101.86" y="3449.628" z="0.4667553" pathPrecision="10" name="Skycrown-30" />
+                <MoveTo questId="1" x="2995.714" y="3454.829" z="25.27348"  name="Skycrown-31" />
+                
+                <TrinityUseOnce questId="1" id="104" max="2" >
+                    <MoveTo questId="1" x="2994.417" y="3538.722" z="25.27348" name="SideStairs50-01" /> 
+                    <MoveTo questId="1" x="2900.844" y="3540.563" z="0.3137349"  name="SideStairs50-02" />
+                    <MoveTo questId="1" x="2915.603" y="3389.721" z="-24.83912"  name="SideStairs50-03" />
+                    <MoveTo questId="1" x="2999.135" y="3383.727" z="0.3137369"  name="SideStairs50-04" />
+                    <TrinityUseStop id="104" />
+                </TrinityUseOnce>
+                
+                <MoveTo questId="1" x="2993.641" y="3300.518" z="0.1" pathPrecision="10" name="Skycrown-36" />
+                <MoveTo questId="1" x="3050.137" y="3301.203" z="0.2452693" pathPrecision="10" name="Skycrown-37" />
+                <MoveTo questId="1" x="3047.89" y="3245.227" z="25.14568"  name="Skycrown-38" />
+                <MoveTo questId="1" x="2977.284" y="3195.36" z="25.14568" pathPrecision="10" name="Skycrown-39" />
+                <MoveTo questId="1" x="2938.865" y="3198.563" z="25.14568" pathPrecision="10" name="Skycrown-40" />
+                <MoveTo questId="1" x="2937.759" y="3248.76" z="0.2452713"  name="Skycrown-41" />
+                <MoveTo questId="1" x="2895.201" y="3248.482" z="0.1000019" pathPrecision="3" name="Skycrown-45" />
+                <MoveTo questId="1" x="2848.012" y="3231.02" z="0.2594715" pathPrecision="3" name="Skycrown-46" />
+                <MoveTo questId="1" x="2810.248" y="3223.343" z="0.1000029" pathPrecision="3" name="Skycrown-43" />
+                
+                <TrinityUseOnce questId="1" id="105" max="2" disableprevious="true">
+                    <MoveTo questId="1" x="2808.766" y="3294.938" z="25.283"  name="SideStairs60-01" /> 
+                    <MoveTo questId="1" x="2741.432" y="3293.088" z="25.283" pathPrecision="3" name="SideStairs60-02" /> 
+                    <MoveTo questId="1" x="2717.971" y="3275.175" z="25.14622" pathPrecision="3" name="SideStairs60-03" /> 
+                    <MoveTo questId="1" x="2703.083" y="3236.926" z="25.283" pathPrecision="3" name="SideStairs60-04" /> 
+                    <MoveTo questId="1" x="2704.886" y="3189.337" z="25.283" pathPrecision="3" name="SideStairs60-05" /> 
+                    <TrinityUseStop id="105" />
+                </TrinityUseOnce>
+                
+                <MoveTo questId="1" x="2769.918" y="3189.758" z="0.1000004"  name="Skycrown-49" />      
+                <MoveTo questId="1" x="2777.784" y="3144.406" z="0.1000038" pathPrecision="10" name="Skycrown-50" />
+                <MoveTo questId="1" x="2788.821" y="3051.818" z="0.2743774" pathPrecision="10" name="Skycrown-51" />
+                <MoveTo questId="1" x="2785.716" y="2900.283" z="0.3870824" pathPrecision="10" name="Skycrown-52" />
+                <MoveTo questId="1" x="2777.866" y="2812.354" z="0.1000076" pathPrecision="3" name="Skycrown-53" />
+                <MoveTo questId="1" x="2848.461" y="2804.812" z="25.10311"  name="Skycrown-55" />
+                <MoveTo questId="1" x="2842.07" y="2713.649" z="50.14565"  name="Skycrown-56" />
+                <MoveTo questId="1" x="2810.94" y="2683.616" z="50.14565" pathPrecision="10" name="Skycrown-57" />          
+                <MoveTo questId="1" x="2716.269" y="2676.697" z="25.10311"  name="Skycrown-58" />
+            </If>
+              
+            <If condition="not Me.IsInTown">   
+                <UseTownPortal questId="1" />  
+                <WaitWhile condition="not Me.IsInTown" />
+            </If>
+
+            <LoadProfile file="KeyHuntinn_A3_NV3.xml" />
+        </While>
+
         <If condition="not Me.IsInTown">   
             <UseTownPortal questId="1" />  
             <WaitWhile condition="not Me.IsInTown" />
         </If>
 
-        <LoadProfile file="KeyHuntinn_A3_NV3.xml" />
+        <LoadProfile file="KeyHuntinn_XahRith.xml" />
     </Order>
 </Profile>

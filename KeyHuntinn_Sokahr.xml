@@ -102,6 +102,21 @@
             <LogMessage output="#Y" />
             <MoveTo questId="1" x="2792.877" y="4212.372" z="100.1467" pathPrecision="3" unsafeRandomDistance="1" />
             <LogMessage output="#Z" />
+
+            <If condition="not Me.IsInTown">   
+                <UseTownPortal questId="1" />  
+                <WaitWhile condition="not Me.IsInTown" />
+            </If>
+
+            <LoadProfile loadRandom="True">
+                <Profiles>
+                    <Profile>A3_Start_KeyHuntinn.xml</Profile>
+                    <Profile>A1_Start_KeyHuntinn.xml</Profile>
+                </Profiles>
+            </LoadProfile>
+
+            <WaitTimer questId="1" waitTime="1000" />
+            <LeaveGame reason="Couldn't find Sokahr!" />
         </While>
 
         <!-- Key Warden Sokahr -->
@@ -120,10 +135,14 @@
             <WaitWhile condition="not Me.IsInTown" />
         </If>
 
+        <LoadProfile loadRandom="True">
+            <Profiles>
+                <Profile>A3_Start_KeyHuntinn.xml</Profile>
+                <Profile>A1_Start_KeyHuntinn.xml</Profile>
+            </Profiles>
+        </LoadProfile>
+
         <WaitTimer questId="1" waitTime="1000" />
-  
-        <!-- switch profiles -->
-        <Continue profile="A3_Start_KeyHuntinn.xml, A1_Start_KeyHuntinn.xml" />
         <LeaveGame reason="Act 2 Done" />
     </Order>
  </Profile>
