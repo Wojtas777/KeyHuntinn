@@ -7,13 +7,14 @@
         <!-- set the kill/loot radius -->
         <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="50" killRadius="40" />
 
-        <!-- GOTO Oasis -->
+        <!-- GOTO Oasis >
         <If condition="(not Me.IsInTown) and (not Zeta.ZetaDia.CurrentLevelAreaId==57425)">   
             <UseTownPortal questId="1" />  
             <WaitWhile condition="not Me.IsInTown" />
-        </If>
+        </If -->
         
-        <If condition="Me.IsInTown">
+        <!-- better towning to work with giles -->
+        <If condition="(not Zeta.ZetaDia.CurrentLevelAreaId==57425)">
             <While condition="(not Zeta.ZetaDia.CurrentLevelAreaId==57425)">
                 <If condition="Me.IsInTown">
                     <UseWaypoint actorId="6442" questId="1" x="324.2319" y="291.6554" z="1.64563" waypointNumber="5" />
@@ -29,19 +30,14 @@
         <!-- main profile starts here -->
         <While condition="not ActorExistsAt(256000, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100)">
             <MoveTo questId="1" x="4225.771" y="4402.414" z="94.58954" pathPrecision="3" unsafeRandomDistance="1" />
-            <LogMessage output="#1" />
             <MoveTo questId="1" x="4217.627" y="4474.988" z="97.13789" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="4154.598" y="4523.951" z="100.1446" pathPrecision="3" unsafeRandomDistance="1" />
-            <LogMessage output="#3" />
             <MoveTo questId="1" x="4108.362" y="4593.289" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="4195.444" y="4677.995" z="97.34128" pathPrecision="3" unsafeRandomDistance="1" />
-            <LogMessage output="#5" />
             <MoveTo questId="1" x="4108.362" y="4593.289" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="4033.307" y="4476.047" z="100.1988" pathPrecision="3" unsafeRandomDistance="1" />
-            <LogMessage output="#7" />
             <MoveTo questId="1" x="3973.628" y="4464.061" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3936.378" y="4523.423" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
-            <LogMessage output="#9" />
             <MoveTo questId="1" x="4001.814" y="4624.985" z="99.20027" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3953.482" y="4739.026" z="97.5541" pathPrecision="3" unsafeRandomDistance="1" /> <!-- missing spot -->
             <MoveTo questId="1" x="3839.022" y="4617.792" z="100.0954" pathPrecision="3" unsafeRandomDistance="1" />
@@ -58,11 +54,17 @@
             <MoveTo questId="1" x="3545.959" y="4033.181" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3541.897" y="3997.416" z="100.1988" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3598.412" y="4030.274" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#25" />
             <MoveTo questId="1" x="3743.585" y="4079.417" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#26" />
             <MoveTo questId="1" x="3820.177" y="3984.434" z="100.153" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#27" />
             <MoveTo questId="1" x="3838.624" y="4135.998" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#28" />
             <MoveTo questId="1" x="3827.48" y="4258.017" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#29" />
             <MoveTo questId="1" x="3837.303" y="4329.914" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#30" />
             <MoveTo questId="1" x="3676.948" y="4329.587" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3493.475" y="4317.505" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3493.475" y="4317.505" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
@@ -121,7 +123,7 @@
         <WaitTimer questId="1" waitTime="1000" />
   
         <!-- switch profiles -->
-        <Continue profile="A1_Start_KeyHuntinn.xml, A3_Start_KeyHuntinn.xml" />
+        <Continue profile="A3_Start_KeyHuntinn.xml, A1_Start_KeyHuntinn.xml" />
         <LeaveGame reason="Act 2 Done" />
     </Order>
  </Profile>

@@ -6,13 +6,13 @@
     <Order>
         <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="80" killRadius="45" />
         
-        <If condition="(not Me.IsInTown) and (not Zeta.ZetaDia.CurrentLevelAreaId==93173)">   
+        <!-- If condition="(not Me.IsInTown) and (not Zeta.ZetaDia.CurrentLevelAreaId==93173)">   
             <UseTownPortal questId="1" />  
             <WaitWhile condition="not Me.IsInTown" />
-        </If>
+        </If -->
         
-        <!-- From Town -->
-        <If condition="Me.IsInTown">
+        <!-- better towning to work with giles -->
+        <If condition="(not Zeta.ZetaDia.CurrentLevelAreaId==93173)">
             <While condition="(not Zeta.ZetaDia.CurrentLevelAreaId==93173)">
                 <If condition="Me.IsInTown">
                     <UseWaypoint questId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="1" />
