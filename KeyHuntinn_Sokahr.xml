@@ -14,8 +14,6 @@
         </If>
         
         <If condition="Me.IsInTown">
-            <UseWaypoint actorId="6442" questId="1" x="324.2319" y="291.6554" z="1.64563" waypointNumber="5" />
-            <WaitWhile condition="Me.IsInTown" />
             <While condition="(not Zeta.ZetaDia.CurrentLevelAreaId==57425)">
                 <If condition="Me.IsInTown">
                     <UseWaypoint actorId="6442" questId="1" x="324.2319" y="291.6554" z="1.64563" waypointNumber="5" />
@@ -31,15 +29,21 @@
         <!-- main profile starts here -->
         <While condition="not ActorExistsAt(256000, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100)">
             <MoveTo questId="1" x="4225.771" y="4402.414" z="94.58954" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#1" />
             <MoveTo questId="1" x="4217.627" y="4474.988" z="97.13789" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="4154.598" y="4523.951" z="100.1446" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#3" />
             <MoveTo questId="1" x="4108.362" y="4593.289" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="4195.444" y="4677.995" z="97.34128" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#5" />
             <MoveTo questId="1" x="4108.362" y="4593.289" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="4033.307" y="4476.047" z="100.1988" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#7" />
             <MoveTo questId="1" x="3973.628" y="4464.061" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3936.378" y="4523.423" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#9" />
             <MoveTo questId="1" x="4001.814" y="4624.985" z="99.20027" pathPrecision="3" unsafeRandomDistance="1" />
+            <MoveTo questId="1" x="3953.482" y="4739.026" z="97.5541" pathPrecision="3" unsafeRandomDistance="1" /> <!-- missing spot -->
             <MoveTo questId="1" x="3839.022" y="4617.792" z="100.0954" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3828.701" y="4605.117" z="100.0882" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3831.642" y="4458.292" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
@@ -81,19 +85,27 @@
             <MoveTo questId="1" x="2907.051" y="4321.385" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3033.023" y="4249.933" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="2940.861" y="4224.197" z="100.1068" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#S" />
             <MoveTo questId="1" x="2960.211" y="4166.911" z="97.60065" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#T" />
             <MoveTo questId="1" x="2860.446" y="4345.52" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#U" />
             <MoveTo questId="1" x="2789.342" y="4398.31" z="100.1002" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#V" />
             <MoveTo questId="1" x="2782.527" y="4460.913" z="97.66301" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#W" />
             <MoveTo questId="1" x="2720.793" y="4463.372" z="99.89315" pathPrecision="1" unsafeRandomDistance="1"/>
+            <LogMessage output="#X" />
             <MoveTo questId="1" x="2778.003" y="4398.69" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#Y" />
             <MoveTo questId="1" x="2792.877" y="4212.372" z="100.1467" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#Z" />
         </While>
 
         <!-- Key Warden Sokahr -->
         <If condition="ActorExistsAt(256000, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100)">
             <LogMessage output="Sokahr found" />
-            <While condition="ActorExistsAt(256000, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100)">
+            <While condition="ActorExistsAt(256000, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 150)">
                 <TrinityMoveToSNO questId="1" snoid="256000" pathPrecision="5" />
             </While>
             <LogMessage output="Sokahr killed" />

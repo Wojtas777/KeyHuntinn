@@ -4,16 +4,15 @@
     <PickupLoot>True</PickupLoot>
     <GameParams quest="72801" step="36" act="A1" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1"  />
     <Order>
-        <!-- force back to town because of transfer from other profiles -->
-        <If condition="(not Me.IsInTown) and (not Zeta.ZetaDia.CurrentLevelAreaId==19952)">   
+        <!-- force back to town because of transfer from other profiles>
+        <If condition="(not Me.IsInTown) and (not Zeta.ZetaDia.CurrentLevelAreaId==19952) and (not Zeta.ZetaDia.CurrentLevelAreaId==72712)">   
             <UseTownPortal questId="1" />  
             <WaitWhile condition="not Me.IsInTown" />
-        </If>
+        </If -->
 
-        <If condition="Me.IsInTown">
-            <UseWaypoint questId="1" actorId="223757" x="2981.259" y="2836.146" z="24.89399" waypointNumber="6" />
-            <WaitWhile condition="Me.IsInTown" />
-            <While condition="(not Zeta.ZetaDia.CurrentLevelAreaId==19952)">
+        <!-- better towning to work with giles -->
+        <If condition="(not Zeta.ZetaDia.CurrentLevelAreaId==19952) and (not Zeta.ZetaDia.CurrentLevelAreaId==72712)">
+            <While condition="(not Zeta.ZetaDia.CurrentLevelAreaId==72712)">
                 <If condition="Me.IsInTown">
                     <UseWaypoint questId="1" actorId="223757" x="2981.259" y="2836.146" z="24.89399" waypointNumber="6" />
                     <WaitWhile condition="Me.IsInTown" />
@@ -107,7 +106,7 @@
         <!-- Key Warden Odeg -->
         <If condition="ActorExistsAt(255996, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100)">
             <LogMessage output="Odeg found" />
-            <While condition="ActorExistsAt(255996, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100)">
+            <While condition="ActorExistsAt(255996, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 150)">
                 <TrinityMoveToSNO questId="1" snoid="255996" pathPrecision="5" />
             </While>
             <LogMessage output="Odeg killed" />
@@ -125,3 +124,5 @@
         <LeaveGame reason="Act 1 Done" />
     </Order>
 </Profile>
+
+<!-- ZetaDia.Me.Backpack.FirstOrDefault(acd => acd.ActorSNO == ???).StackCount -->

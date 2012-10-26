@@ -13,8 +13,6 @@
         
         <!-- From Town -->
         <If condition="Me.IsInTown">
-            <UseWaypoint questId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="1" />   
-            <WaitWhile condition="Me.IsInTown" />
             <While condition="(not Zeta.ZetaDia.CurrentLevelAreaId==93173)">
                 <If condition="Me.IsInTown">
                     <UseWaypoint questId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="1" />
@@ -161,7 +159,7 @@
         <!-- Key Warden Xah'Rith -->
         <If condition="ActorExistsAt(256015, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100)">
             <LogMessage output="Xah'Rith found" />
-            <While condition="ActorExistsAt(256015, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100)">
+            <While condition="ActorExistsAt(256015, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 150)">
                 <TrinityMoveToSNO questId="1" snoid="256015" pathPrecision="5" />
             </While>
             <LogMessage output="Xah'Rith killed" />

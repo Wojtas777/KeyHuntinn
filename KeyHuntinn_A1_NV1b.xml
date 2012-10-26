@@ -49,7 +49,7 @@
             <MoveTo questId="1" x="1085.687" y="3434.638" z="62.09126" name="Outside Manor #5" pathPrecision="1" />
             <MoveTo questId="1" x="1174.584" y="3382.356" z="63.96574" name="Outside Manor #6" pathPrecision="1" />
             <MoveTo questId="1" x="1206.919" y="3476.581" z="77.86015" name="Outside Manor #7" pathPrecision="1" />
-            <MoveTo questId="1" x="1076.523" y="3542.832" z="78.09142" name="Outside Manor #8" pathPrecision="1" />
+            <MoveTo questId="1" x="1076.523" y="3547.832" z="78.09142" name="Outside Manor #8" pathPrecision="1" /> <!-- y="3542.832" -->
             <MoveTo questId="1" x="1080.838" y="3603.76" z="83.80707" name="Bridge #1" pathPrecision="1" />
             <WaitTimer questId="1" waitTime="250" />
         </If>
