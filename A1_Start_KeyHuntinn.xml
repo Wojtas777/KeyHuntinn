@@ -2,15 +2,9 @@
     <Name>KeyHuntinn - A1 - Start</Name>
     <GameParams quest="72801" step="36" act="A1" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1"  />
     <Order>
-        <If condition="not CurrentWorldId == 71150">
-            <If condition="not Me.IsInTown">
-                <UseTownPortal questId="1" />  
-                <WaitWhile condition="not Me.IsInTown" />
-            </If>
-            <If condition="Me.IsInTown">
-                <LeaveGame />
-                <LoadProfile file="A1_Start_KeyHuntinn.xml" />
-            </If> 
+        <If condition="not Me.IsInTown">
+            <UseTownPortal questId="1" />  
+            <WaitWhile condition="not Me.IsInTown" />
         </If>
 
         <LoadProfile loadRandom="True">

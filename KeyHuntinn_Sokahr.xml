@@ -4,22 +4,19 @@
     <PickupLoot>True</PickupLoot>
     <GameParams quest="57337" step="26" act="A2" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1" />
     <Order>
+        <If condition="(not Me.IsInTown) and (not Zeta.ZetaDia.CurrentLevelAreaId==57425)">   
+            <UseTownPortal questId="1" />  
+            <WaitWhile condition="not Me.IsInTown" />
+        </If>
+
+        <!-- GOTO Oasis -->
+        <If condition="Me.IsInTown">   
+            <UseWaypoint questId="1" x="324.2319" y="291.6554" z="1.64563" actorId="6442" waypointNumber="5" />
+            <WaitWhile condition="Me.IsInTown" />
+        </If>
+
         <!-- set the kill/loot radius -->
         <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="50" killRadius="40" />
-        
-        <!-- better towning to work with giles -->
-        <If condition="(not Zeta.ZetaDia.CurrentLevelAreaId==57425)">
-            <While condition="(not Zeta.ZetaDia.CurrentLevelAreaId==57425)">
-                <If condition="Me.IsInTown">
-                    <UseWaypoint actorId="6442" questId="1" x="324.2319" y="291.6554" z="1.64563" waypointNumber="5" />
-                    <WaitWhile condition="Me.IsInTown" />
-                </If>
-                <If condition="not Me.IsInTown">
-                    <UseTownPortal questId="1" />  
-                    <WaitWhile condition="not Me.IsInTown" />
-                </If>
-            </While>
-        </If>
 
         <!-- main profile starts here -->
         <While condition="not ActorExistsAt(256000, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100)">
@@ -48,15 +45,21 @@
             <MoveTo questId="1" x="3545.959" y="4033.181" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3541.897" y="3997.416" z="100.1988" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3598.412" y="4030.274" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
-            <LogMessage output="#25" />
             <MoveTo questId="1" x="3743.585" y="4079.417" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
-            <LogMessage output="#26" />
+            <MoveTo questId="1" x="2782.527" y="4460.913" z="97.66301" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#W" />
             <MoveTo questId="1" x="3820.177" y="3984.434" z="100.153" pathPrecision="3" unsafeRandomDistance="1" />
             <LogMessage output="#27" />
+            <MoveTo questId="1" x="2720.793" y="4463.372" z="99.89315" pathPrecision="1" unsafeRandomDistance="1"/>
+            <LogMessage output="#X" />
             <MoveTo questId="1" x="3838.624" y="4135.998" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <LogMessage output="#28" />
+            <MoveTo questId="1" x="2778.003" y="4398.69" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#Y" />
             <MoveTo questId="1" x="3827.48" y="4258.017" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <LogMessage output="#29" />
+            <MoveTo questId="1" x="2792.877" y="4212.372" z="100.1467" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#Z" />
             <MoveTo questId="1" x="3837.303" y="4329.914" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <LogMessage output="#30" />
             <MoveTo questId="1" x="3676.948" y="4329.587" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
@@ -88,14 +91,10 @@
             <LogMessage output="#U" />
             <MoveTo questId="1" x="2789.342" y="4398.31" z="100.1002" pathPrecision="3" unsafeRandomDistance="1" />
             <LogMessage output="#V" />
-            <MoveTo questId="1" x="2782.527" y="4460.913" z="97.66301" pathPrecision="3" unsafeRandomDistance="1" />
-            <LogMessage output="#W" />
-            <MoveTo questId="1" x="2720.793" y="4463.372" z="99.89315" pathPrecision="1" unsafeRandomDistance="1"/>
-            <LogMessage output="#X" />
-            <MoveTo questId="1" x="2778.003" y="4398.69" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
-            <LogMessage output="#Y" />
-            <MoveTo questId="1" x="2792.877" y="4212.372" z="100.1467" pathPrecision="3" unsafeRandomDistance="1" />
-            <LogMessage output="#Z" />
+            
+            
+            
+            
 
             <If condition="not Me.IsInTown">   
                 <UseTownPortal questId="1" />  

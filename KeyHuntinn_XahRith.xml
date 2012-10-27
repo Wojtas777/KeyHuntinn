@@ -6,18 +6,19 @@
     <Order>
         <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="80" killRadius="45" />
         
-        <!-- better towning to work with giles -->
-        <If condition="(not Zeta.ZetaDia.CurrentLevelAreaId==93173)">
-            <While condition="(not Zeta.ZetaDia.CurrentLevelAreaId==93173)">
-                <If condition="Me.IsInTown">
-                    <UseWaypoint questId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="1" />
-                    <WaitWhile condition="Me.IsInTown" />
-                </If>
-                <If condition="not Me.IsInTown">
-                    <UseTownPortal questId="1" />  
-                    <WaitWhile condition="not Me.IsInTown" />
-                </If>
-            </While>
+        <If condition="(not Me.IsInTown) and (not Zeta.ZetaDia.CurrentLevelAreaId==93173)">   
+            <UseTownPortal questId="1" />  
+            <WaitWhile condition="not Me.IsInTown" />
+        </If>
+
+        <!-- From Town -->
+        <If condition="CurrentWorldId==172909">
+            <MoveTo questId="1" x="402.5403" y="414.342" z="1.5338" />
+            <WaitTimer questId="1" waitTime="150" />
+            <UseWaypoint questId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="1" />   
+                <While condition="Me.IsInTown">
+                    <WaitTimer questId="1" waitTime="50" />
+                </While>    
         </If>
         
         <While condition="not ActorExistsAt(256015, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100)">

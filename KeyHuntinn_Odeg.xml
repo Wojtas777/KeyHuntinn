@@ -4,24 +4,20 @@
     <PickupLoot>True</PickupLoot>
     <GameParams quest="72801" step="36" act="A1" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1"  />
     <Order>
-        <!-- force back to town because of transfer from other profiles>
+        <!-- force back to town because of transfer from other profiles -->
         <If condition="(not Me.IsInTown) and (not Zeta.ZetaDia.CurrentLevelAreaId==19952) and (not Zeta.ZetaDia.CurrentLevelAreaId==72712)">   
             <UseTownPortal questId="1" />  
             <WaitWhile condition="not Me.IsInTown" />
-        </If -->
+        </If>
 
-        <!-- better towning to work with giles -->
-        <If condition="(not Zeta.ZetaDia.CurrentLevelAreaId==19952) and (not Zeta.ZetaDia.CurrentLevelAreaId==72712)">
-            <While condition="(not Zeta.ZetaDia.CurrentLevelAreaId==72712)">
-                <If condition="Me.IsInTown">
-                    <UseWaypoint questId="1" actorId="223757" x="2981.259" y="2836.146" z="24.89399" waypointNumber="6" />
-                    <WaitWhile condition="Me.IsInTown" />
-                </If>
-                <If condition="not Me.IsInTown">
-                    <UseTownPortal questId="1" />  
-                    <WaitWhile condition="not Me.IsInTown" />
-                </If>
-            </While>
+        <!-- From Town -->
+        <If condition="Me.IsInTown">
+            <MoveTo questId="1" x="2981.259" y="2836.146" z="24.89399" />
+            <WaitTimer questId="1" waitTime="150" />
+            <While condition="Me.IsInTown">
+                <UseWaypoint questId="1" actorId="223757" x="2981.259" y="2836.146" z="24.89399" waypointNumber="8" />  
+            </While>        
+            <WaitTimer questId="1" waitTime="150" />
         </If>
         
         <While condition="not ActorExistsAt(255996, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100)">
