@@ -6,11 +6,6 @@
     <Order>
         <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="80" killRadius="45" />
         
-        <!-- If condition="(not Me.IsInTown) and (not Zeta.ZetaDia.CurrentLevelAreaId==93173)">   
-            <UseTownPortal questId="1" />  
-            <WaitWhile condition="not Me.IsInTown" />
-        </If -->
-        
         <!-- better towning to work with giles -->
         <If condition="(not Zeta.ZetaDia.CurrentLevelAreaId==93173)">
             <While condition="(not Zeta.ZetaDia.CurrentLevelAreaId==93173)">
@@ -160,15 +155,10 @@
                 <WaitWhile condition="not Me.IsInTown" />
             </If>
 
-            <LoadProfile loadRandom="True">
-                <Profiles>
-                    <Profile>A1_Start_KeyHuntinn.xml</Profile>
-                    <Profile>A2_Start_KeyHuntinn.xml</Profile>
-                </Profiles>
-            </LoadProfile>
-
+            <LogMessage output="Couldn't find Xah'Rith!" />
             <WaitTimer questId="1" waitTime="1000" />
-            <LeaveGame reason="Couldn't find Xah'Rith!" />
+            <Continue profile="A1_Start_KeyHuntinn.xml, A2_Start_KeyHuntinn.xml" />
+            <LeaveGame />
         </While>
 
         <!-- Key Warden Xah'Rith -->
@@ -186,14 +176,9 @@
             <WaitWhile condition="not Me.IsInTown" />
         </If>
 
-        <LoadProfile loadRandom="True">
-            <Profiles>
-                <Profile>A3_Start_KeyHuntinn.xml</Profile>
-                <Profile>A1_Start_KeyHuntinn.xml</Profile>
-            </Profiles>
-        </LoadProfile>
-
+        <LogMessage output="Act 3 Done" />
         <WaitTimer questId="1" waitTime="1000" />
-        <LeaveGame reason="Act 3 Done" />
+        <Continue profile="A1_Start_KeyHuntinn.xml, A2_Start_KeyHuntinn.xml" />
+        <LeaveGame />
     </Order>
 </Profile>  

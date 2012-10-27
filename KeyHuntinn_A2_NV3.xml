@@ -60,6 +60,8 @@
             <LoadProfile file="KeyHuntinn_A2_NV4.xml" />
         </While>
 
+        <LogMessage output="Got 5 NV, let's kill Key Warden" />
+
         <If condition="not Me.IsInTown">   
             <UseTownPortal questId="1" />  
             <WaitWhile condition="not Me.IsInTown" />

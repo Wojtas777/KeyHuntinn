@@ -93,6 +93,7 @@
             </LoadProfile>
         </While>
         
+        <LogMessage output="Got 5 NV, let's kill Key Warden" />
         <!-- go back to town for next profile -->
         <If condition="not Me.IsInTown">   
             <UseTownPortal questId="1" />  

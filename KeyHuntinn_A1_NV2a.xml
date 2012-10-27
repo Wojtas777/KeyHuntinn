@@ -259,8 +259,17 @@
             <MoveTo questId="1" x="248.2865" y="953.9418" z="20.1" name="Festering Woods #27" pathPrecision="1" unsafeRandomDistance="5" />
             <MoveTo questId="1" x="300.5892" y="961.9233" z="20.1" name="Festering Woods #28" pathPrecision="1" unsafeRandomDistance="5" />
             <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="70" killRadius="60" />
+
+            <If condition="not Me.IsInTown">   
+                <UseTownPortal questId="1" />  
+                <WaitWhile condition="not Me.IsInTown" />
+            </If>
+
+            <LoadProfile file="KeyHuntinn_Odeg.xml" />
         </While>
         
+        <LogMessage output="Got 5 NV, let's kill Key Warden" />
+
         <If condition="not Me.IsInTown">   
             <UseTownPortal questId="1" />  
             <WaitWhile condition="not Me.IsInTown" />

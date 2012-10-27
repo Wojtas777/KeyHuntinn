@@ -49,6 +49,8 @@
                 </Profiles>
             </LoadProfile>
         </While>
+
+        <LogMessage output="Got 5 NV, let's kill Key Warden" />
    
         <!-- Go back to Town -->
         <If condition="not Me.IsInTown">   

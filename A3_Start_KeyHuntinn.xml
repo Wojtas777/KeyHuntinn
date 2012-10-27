@@ -2,6 +2,17 @@
     <Name>KeyHuntinn - A3 - Start</Name>
     <GameParams quest="101758" step="1" act="A3" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1"  />
     <Order>
+        <If condition="not CurrentWorldId == 172909">
+            <If condition="not Me.IsInTown">
+                <UseTownPortal questId="1" />  
+                <WaitWhile condition="not Me.IsInTown" />
+            </If>
+            <If condition="Me.IsInTown">
+                <LeaveGame />
+                <LoadProfile file="A3_Start_KeyHuntinn.xml" />
+            </If> 
+        </If>
+
         <LoadProfile file="KeyHuntinn_A3_NV1.xml" />
     </Order>
 </Profile>

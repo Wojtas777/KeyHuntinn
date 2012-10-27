@@ -104,15 +104,10 @@
                 <WaitWhile condition="not Me.IsInTown" />
             </If>
 
-            <LoadProfile loadRandom="True">
-                <Profiles>
-                    <Profile>A2_Start_KeyHuntinn.xml</Profile>
-                    <Profile>A3_Start_KeyHuntinn.xml</Profile>
-                </Profiles>
-            </LoadProfile>
-
+            <LogMessage output="Couldn't find Odeg!" />
             <WaitTimer questId="1" waitTime="1000" />
-            <LeaveGame reason="Couldn't find Odeg!" />
+            <Continue profile="A2_Start_KeyHuntinn.xml, A3_Start_KeyHuntinn.xml" />
+            <LeaveGame />
         </While>
 
         <!-- Key Warden Odeg -->
@@ -130,17 +125,18 @@
             <WaitWhile condition="not Me.IsInTown" />
         </If>
 
-        <LoadProfile loadRandom="True">
-            <Profiles>
-                <Profile>A2_Start_KeyHuntinn.xml</Profile>
-                <Profile>A3_Start_KeyHuntinn.xml</Profile>
-            </Profiles>
-        </LoadProfile>
-
+        <LogMessage output="Act 1 Done" />
         <WaitTimer questId="1" waitTime="1000" />
-        <LeaveGame reason="Act 1 Done" />
+        <Continue profile="A2_Start_KeyHuntinn.xml, A3_Start_KeyHuntinn.xml" />
+        <LeaveGame />
     </Order>
 </Profile>
 
 <!-- Continue profile="A2_Start_KeyHuntinn.xml, A3_Start_KeyHuntinn.xml" / -->
 <!-- ZetaDia.Me.Backpack.FirstOrDefault(acd => acd.ActorSNO == ???).StackCount -->
+<!-- LoadProfile loadRandom="True">
+    <Profiles>
+        <Profile>A2_Start_KeyHuntinn.xml</Profile>
+        <Profile>A3_Start_KeyHuntinn.xml</Profile>
+    </Profiles>
+</LoadProfile -->
