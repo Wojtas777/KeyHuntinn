@@ -46,20 +46,12 @@
             <MoveTo questId="1" x="3541.897" y="3997.416" z="100.1988" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3598.412" y="4030.274" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3743.585" y="4079.417" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
-            <MoveTo questId="1" x="2782.527" y="4460.913" z="97.66301" pathPrecision="3" unsafeRandomDistance="1" />
-            <LogMessage output="#W" />
             <MoveTo questId="1" x="3820.177" y="3984.434" z="100.153" pathPrecision="3" unsafeRandomDistance="1" />
             <LogMessage output="#27" />
-            <MoveTo questId="1" x="2720.793" y="4463.372" z="99.89315" pathPrecision="1" unsafeRandomDistance="1"/>
-            <LogMessage output="#X" />
             <MoveTo questId="1" x="3838.624" y="4135.998" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <LogMessage output="#28" />
-            <MoveTo questId="1" x="2778.003" y="4398.69" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
-            <LogMessage output="#Y" />
             <MoveTo questId="1" x="3827.48" y="4258.017" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <LogMessage output="#29" />
-            <MoveTo questId="1" x="2792.877" y="4212.372" z="100.1467" pathPrecision="3" unsafeRandomDistance="1" />
-            <LogMessage output="#Z" />
             <MoveTo questId="1" x="3837.303" y="4329.914" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <LogMessage output="#30" />
             <MoveTo questId="1" x="3676.948" y="4329.587" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
@@ -84,18 +76,17 @@
             <MoveTo questId="1" x="2907.051" y="4321.385" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3033.023" y="4249.933" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="2940.861" y="4224.197" z="100.1068" pathPrecision="3" unsafeRandomDistance="1" />
-            <LogMessage output="#S" />
             <MoveTo questId="1" x="2960.211" y="4166.911" z="97.60065" pathPrecision="3" unsafeRandomDistance="1" />
-            <LogMessage output="#T" />
             <MoveTo questId="1" x="2860.446" y="4345.52" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
-            <LogMessage output="#U" />
             <MoveTo questId="1" x="2789.342" y="4398.31" z="100.1002" pathPrecision="3" unsafeRandomDistance="1" />
-            <LogMessage output="#V" />
+            <MoveTo questId="1" x="2782.527" y="4460.913" z="97.66301" pathPrecision="3" unsafeRandomDistance="1" />
+            <MoveTo questId="1" x="2720.793" y="4463.372" z="99.89315" pathPrecision="1" unsafeRandomDistance="1"/>
+            <LogMessage output="#X" />
+            <MoveTo questId="1" x="2778.003" y="4398.69" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#Y" />
+            <MoveTo questId="1" x="2792.877" y="4212.372" z="100.1467" pathPrecision="3" unsafeRandomDistance="1" />
+            <LogMessage output="#Z" />
             
-            
-            
-            
-
             <If condition="not Me.IsInTown">   
                 <UseTownPortal questId="1" />  
                 <WaitWhile condition="not Me.IsInTown" />
