@@ -158,8 +158,7 @@
 
             <LogMessage output="Couldn't find Xah'Rith!" />
             <WaitTimer questId="1" waitTime="1000" />
-            <Continue profile="A1_Start_KeyHuntinn.xml, A2_Start_KeyHuntinn.xml" />
-            <LeaveGame />
+            <TrinityLoadProfile profile="A1_Start_KeyHuntinn.xml!A2_Start_KeyHuntinn.xml" exit="true" /> 
         </While>
 
         <!-- Key Warden Xah'Rith -->
@@ -179,7 +178,6 @@
 
         <LogMessage output="Act 3 Done" />
         <WaitTimer questId="1" waitTime="1000" />
-        <Continue profile="A1_Start_KeyHuntinn.xml, A2_Start_KeyHuntinn.xml" />
-        <LeaveGame />
+        <TrinityLoadProfile profile="A1_Start_KeyHuntinn.xml!A2_Start_KeyHuntinn.xml" exit="true" />
     </Order>
 </Profile>  

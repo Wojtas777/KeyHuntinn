@@ -102,8 +102,7 @@
 
             <LogMessage output="Couldn't find Odeg!" />
             <WaitTimer questId="1" waitTime="1000" />
-            <Continue profile="A2_Start_KeyHuntinn.xml, A3_Start_KeyHuntinn.xml" />
-            <LeaveGame />
+            <TrinityLoadProfile profile="A2_Start_KeyHuntinn.xml!A3_Start_KeyHuntinn.xml" exit="true" />
         </While>
 
         <!-- Key Warden Odeg -->
@@ -123,8 +122,7 @@
 
         <LogMessage output="Act 1 Done" />
         <WaitTimer questId="1" waitTime="1000" />
-        <Continue profile="A2_Start_KeyHuntinn.xml, A3_Start_KeyHuntinn.xml" />
-        <LeaveGame />
+        <TrinityLoadProfile profile="A2_Start_KeyHuntinn.xml!A3_Start_KeyHuntinn.xml" exit="true" />        
     </Order>
 </Profile>
 

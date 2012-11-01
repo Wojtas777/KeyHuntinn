@@ -7,6 +7,10 @@
             <WaitWhile condition="not Me.IsInTown" />
         </If>
 
+        <!-- <If condition="ZetaDia.Me.Stash.FirstOrDefault(acd => acd.ActorSNO == ???).StackCount > 1">
+            <LogMessage output="True" />
+        </If> -->
+
         <LoadProfile file="KeyHuntinn_A3_NV1.xml" />
     </Order>
 </Profile>
