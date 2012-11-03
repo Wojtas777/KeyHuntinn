@@ -1,6 +1,6 @@
 <Profile xmlns="http://tempuri.org/ProfileSchema.xsd" xmlns:xsi="http://tempuri.org/ProfileSchema.xsd">
     <Name>KeyHuntinn - A1 - Start</Name>
-    <GameParams quest="72801" step="36" act="A1" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1"  />
+    <GameParams quest="72801" step="36" act="A1" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1" />
     <Order>
         <If condition="not Me.IsInTown">
             <UseTownPortal questId="1" />  

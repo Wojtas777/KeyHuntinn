@@ -102,7 +102,7 @@
 
             <LogMessage output="Couldn't find Odeg!" />
             <WaitTimer questId="1" waitTime="1000" />
-            <TrinityLoadProfile profile="A2_Start_KeyHuntinn.xml!A3_Start_KeyHuntinn.xml" exit="true" />
+            <TrinityLoadProfile file="A2_Start_KeyHuntinn.xml!A3_Start_KeyHuntinn.xml" exit="true" />
         </While>
 
         <!-- Key Warden Odeg -->
@@ -122,11 +122,10 @@
 
         <LogMessage output="Act 1 Done" />
         <WaitTimer questId="1" waitTime="1000" />
-        <TrinityLoadProfile profile="A2_Start_KeyHuntinn.xml!A3_Start_KeyHuntinn.xml" exit="true" />        
+        <TrinityLoadProfile file="A2_Start_KeyHuntinn.xml!A3_Start_KeyHuntinn.xml" exit="true" />        
     </Order>
 </Profile>
 
-<!-- Continue profile="A2_Start_KeyHuntinn.xml, A3_Start_KeyHuntinn.xml" / -->
 <!-- ZetaDia.Me.Backpack.FirstOrDefault(acd => acd.ActorSNO == ???).StackCount -->
 <!-- LoadProfile loadRandom="True">
     <Profiles>
@@ -134,3 +133,6 @@
         <Profile>A3_Start_KeyHuntinn.xml</Profile>
     </Profiles>
 </LoadProfile -->
+<!-- Gidbin Fetish: 245838 -->
+
+<!-- Key SNOs: 255809, 255807, 255808 -->
