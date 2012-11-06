@@ -1,0 +1,19 @@
+<Profile>
+	<Name>[A3 - Inferno]Champion-Hunting B Test Version 1.03 Profile Starter!</Name>
+	<KillMonsters>True</KillMonsters>
+	<PickupLoot>True</PickupLoot>
+	<GameParams quest="101758" step="29" act="A3" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1"  />
+	<Order>
+	
+		<If condition="(not Me.IsInTown)">   
+			<UseTownPortal questId="1" />       
+		</If>
+		
+		<WaitTimer questId="1" waitTime="5000" />
+		
+		<LoadProfile loadRandom="true">
+			<Profile>BigRed_DamnedTowerA.xml</Profile>
+			<Profile>BigRed_DamnedTowerB.xml</Profile>
+		</LoadProfile>
+	</Order>
+</Profile>
