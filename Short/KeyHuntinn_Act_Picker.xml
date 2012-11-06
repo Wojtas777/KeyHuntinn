@@ -10,55 +10,62 @@
         <!-- Run Act 1 if lowest -->
         <If condition="((GetBackpackItemCount(255809) + GetStashedItemCount(255809)) &lt; (GetBackpackItemCount(255807) + GetStashedItemCount(255807))) and ((GetBackpackItemCount(255809) + GetStashedItemCount(255809)) &lt; (GetBackpackItemCount(255808) + GetStashedItemCount(255808)))">
             <LogMessage output="Destruction Keys needed, running A1" />
-            <LoadProfile file="A1_Start_Keyhuntinn.xml" leaveGame="True" />
+            <TrinityLoadProfile file="A1_Start_Keyhuntinn.xml" exit="true" />
+            <!-- <LoadProfile profile="A1_Start_Keyhuntinn.xml" leaveGame="true" /> -->
         </If>
 
         <!-- Run Act 2 if lowest -->
         <If condition="((GetBackpackItemCount(255807) + GetStashedItemCount(255807)) &lt; (GetBackpackItemCount(255809) + GetStashedItemCount(255809))) and ((GetBackpackItemCount(255807) + GetStashedItemCount(255807)) &lt; (GetBackpackItemCount(255808) + GetStashedItemCount(255808)))">
             <LogMessage output="Hate Keys needed, running A2" />
-            <LoadProfile file="A2_Start_Keyhuntinn.xml" leaveGame="True" />
+            <TrinityLoadProfile file="A2_Start_Keyhuntinn.xml" exit="true" />
+            <!-- <LoadProfile profile="A2_Start_Keyhuntinn.xml" leaveGame="true" /> -->
         </If>
 
         <!-- Run Act 3 if lowest -->
         <If condition="((GetBackpackItemCount(255808) + GetStashedItemCount(255808)) &lt; (GetBackpackItemCount(255809) + GetStashedItemCount(255809))) and ((GetBackpackItemCount(255808) + GetStashedItemCount(255808)) &lt; (GetBackpackItemCount(255807) + GetStashedItemCount(255807)))">
             <LogMessage output="Terror Keys needed, running A1" />
-            <LoadProfile file="A3_Start_Keyhuntinn.xml" leaveGame="True" />
+            <TrinityLoadProfile file="A3_Start_Keyhuntinn.xml" exit="true" />
+            <!-- <LoadProfile profile="A3_Start_Keyhuntinn.xml" leaveGame="true" /> -->
         </If>
 
         <!-- Run Act 2/3 if most A1 -->
         <If condition="((GetBackpackItemCount(255809) + GetStashedItemCount(255809)) &gt; (GetBackpackItemCount(255807) + GetStashedItemCount(255807))) and ((GetBackpackItemCount(255809) + GetStashedItemCount(255809)) &gt; (GetBackpackItemCount(255808) + GetStashedItemCount(255808)))">
             <LogMessage output="You have a lot of Destruction Keys, running A2 or A3" />
-            <LoadProfile loadRandom="True" leaveGame="True">
+            <TrinityLoadProfile file="A2_Start_KeyHuntinn.xml!A3_Start_Keyhuntinn.xml" exit="true" />
+            <!-- <LoadProfile loadRandom="True" leaveGame="True">
                 <Profile>A2_Start_KeyHuntinn.xml</Profile>
                 <Profile>A3_Start_KeyHuntinn.xml</Profile>
-            </LoadProfile>
+            </LoadProfile> -->
         </If>
 
         <!-- Run Act 1/3 if most A2 -->
         <If condition="((GetBackpackItemCount(255807) + GetStashedItemCount(255807)) &gt; (GetBackpackItemCount(255809) + GetStashedItemCount(255809))) and ((GetBackpackItemCount(255807) + GetStashedItemCount(255807)) &gt; (GetBackpackItemCount(255808) + GetStashedItemCount(255808)))">
             <LogMessage output="You have a lot of Hate Keys, running A1 or A3" />
-            <LoadProfile loadRandom="True" leaveGame="True">
+            <TrinityLoadProfile file="A1_Start_KeyHuntinn.xml!A3_Start_Keyhuntinn.xml" exit="true" />
+            <!-- <LoadProfile loadRandom="True" leaveGame="True">
                 <Profile>A1_Start_KeyHuntinn.xml</Profile>
                 <Profile>A3_Start_KeyHuntinn.xml</Profile>
-            </LoadProfile>
+            </LoadProfile> -->
         </If>
 
         <!-- Run Act 1/2 if most A3 -->
         <If condition="((GetBackpackItemCount(255808) + GetStashedItemCount(255808)) &gt; (GetBackpackItemCount(255809) + GetStashedItemCount(255809))) and ((GetBackpackItemCount(255808) + GetStashedItemCount(255808)) &gt; (GetBackpackItemCount(255807) + GetStashedItemCount(255807)))">
             <LogMessage output="You have a lot of Terror Keys, running A1 or A3" />
-            <LoadProfile loadRandom="True" leaveGame="True">
+            <TrinityLoadProfile file="A1_Start_KeyHuntinn.xml!A1_Start_Keyhuntinn.xml" exit="true" />
+            <!-- <LoadProfile loadRandom="True" leaveGame="True">
                 <Profile>A1_Start_KeyHuntinn.xml</Profile>
                 <Profile>A2_Start_KeyHuntinn.xml</Profile>
-            </LoadProfile>
+            </LoadProfile> -->
         </If>
 
         <!-- Otherwise they're all equal so pick random form all 3 acts -->
         <LogMessage output="You have no Keys or all amounts are equal, running A1, A2, or A3" />
-        <LoadProfile loadRandom="True" leaveGame="True">
+        <TrinityLoadProfile file="A1_Start_KeyHuntinn.xml!A2_Start_KeyHuntinn.xml!A3_Start_Keyhuntinn.xml" exit="true" />
+        <!-- <LoadProfile loadRandom="True" leaveGame="True">
             <Profile>A1_Start_KeyHuntinn.xml</Profile>
             <Profile>A2_Start_KeyHuntinn.xml</Profile>
             <Profile>A3_Start_KeyHuntinn.xml</Profile>
-        </LoadProfile>
+        </LoadProfile> -->
     </Order>
 </Profile>
 <!-- Gidbin Fetish: 245838 -->
