@@ -4,13 +4,13 @@
     <PickupLoot>True</PickupLoot>
     <GameParams quest="57337" step="26" act="A2" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1" />
     <Order>
-        <If condition="(not Me.IsInTown) and (not Zeta.ZetaDia.CurrentLevelAreaId==57425)">   
-            <UseTownPortal questId="1" />  
+        <If condition="(not Me.IsInTown) and (not Zeta.ZetaDia.CurrentLevelAreaId==57425)">
+            <UseTownPortal questId="1" />
             <WaitWhile condition="not Me.IsInTown" />
         </If>
 
         <!-- GOTO Oasis -->
-        <If condition="Me.IsInTown">   
+        <If condition="Me.IsInTown">
             <UseWaypoint questId="1" x="324.2319" y="291.6554" z="1.64563" actorId="6442" waypointNumber="5" />
             <WaitWhile condition="Me.IsInTown" />
         </If>
@@ -48,7 +48,7 @@
             <MoveTo questId="1" x="3448.229" y="4414.834" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3389.899" y="4364.895" z="100.0591" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3355.035" y="4231.469" z="100.1004" pathPrecision="3" unsafeRandomDistance="1" />
-            <MoveTo questId="1" x="3235.141" y="4182.993" z="100.1" pathPrecision="3" unsafeRandomDistance="1" /> 
+            <MoveTo questId="1" x="3235.141" y="4182.993" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3124.169" y="4123.921" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3081.957" y="4034.642" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="2992.25" y="4197.32" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
@@ -73,35 +73,36 @@
             <MoveTo questId="1" x="3110.32" y="4208.194" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3179.581" y="4282.82" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
             <MoveTo questId="1" x="3198.814" y="4321.397" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
-            
-            <If condition="not Me.IsInTown">   
-                <UseTownPortal questId="1" />  
+
+            <If condition="not Me.IsInTown">
+                <UseTownPortal questId="1" />
                 <WaitWhile condition="not Me.IsInTown" />
             </If>
 
             <LogMessage output="Couldn't find Sokahr!" />
             <WaitTimer questId="1" waitTime="1000" />
-            <TrinityLoadProfile file="A3_Start_KeyHuntinn.xml!A1_Start_KeyHuntinn.xml" exit="true" /> 
+            <LoadProfile file="KeyHuntinn_Act_Picker.xml" />
         </While>
 
         <!-- Key Warden Sokahr -->
         <If condition="ActorExistsAt(256000, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100)">
             <LogMessage output="Sokahr found" />
             <While condition="ActorExistsAt(256000, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 150)">
-                <TrinityMoveToSNO questId="1" snoid="256000" pathPrecision="5" />
+                <MoveTo questId="1" actorId="256000" pathPrecision="5" />
+                <!-- <TrinityMoveToSNO questId="1" snoid="256000" pathPrecision="5" /> -->
             </While>
             <LogMessage output="Sokahr killed" />
             <WaitTimer questId="1" waitTime="1000" />
         </If>
 
         <!-- Go back to Town to get ready for next profile -->
-        <If condition="not Me.IsInTown">   
-            <UseTownPortal questId="1" />  
+        <If condition="not Me.IsInTown">
+            <UseTownPortal questId="1" />
             <WaitWhile condition="not Me.IsInTown" />
         </If>
 
         <LogMessage output="Act 2 Done" />
         <WaitTimer questId="1" waitTime="1000" />
-        <TrinityLoadProfile file="A3_Start_KeyHuntinn.xml!A1_Start_KeyHuntinn.xml" exit="true" /> 
+        <LoadProfile file="KeyHuntinn_Act_Picker.xml" />
     </Order>
  </Profile>

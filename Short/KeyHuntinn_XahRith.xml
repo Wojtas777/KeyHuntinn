@@ -2,12 +2,12 @@
     <Name>KeyHuntinn - Xah'Rith - Stonefort</Name>
     <KillMonsters>True</KillMonsters>
     <PickupLoot>True</PickupLoot>
-    <GameParams quest="101758" step="1" act="A3" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1"  /> 
+    <GameParams quest="101758" step="1" act="A3" difficulty="Inferno" resumeFromSave="False" isPrivate="True" numGames="-1"  />
     <Order>
         <ToggleTargeting questId="1" combat="True" looting="True" lootRadius="80" killRadius="45" />
-        
-        <If condition="(not Me.IsInTown) and (not Zeta.ZetaDia.CurrentLevelAreaId==93173)">   
-            <UseTownPortal questId="1" />  
+
+        <If condition="(not Me.IsInTown) and (not Zeta.ZetaDia.CurrentLevelAreaId==93173)">
+            <UseTownPortal questId="1" />
             <WaitWhile condition="not Me.IsInTown" />
         </If>
 
@@ -15,27 +15,27 @@
         <If condition="CurrentWorldId==172909">
             <MoveTo questId="1" x="402.5403" y="414.342" z="1.5338" />
             <WaitTimer questId="1" waitTime="150" />
-            <UseWaypoint questId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="1" />   
+            <UseWaypoint questId="1" actorId="6442" x="402.5403" y="414.342" z="1.5338" waypointNumber="1" />
                 <While condition="Me.IsInTown">
                     <WaitTimer questId="1" waitTime="50" />
-                </While>    
+                </While>
         </If>
-        
+
         <While condition="not ActorExistsAt(256015, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100)">
             <!-- Checkpoint near door of Skycrown-->
             <If condition="ActorExistsAt(3795, 4263.047, 4200.328, -25.00001, 100) and CurrentWorldId == 93099">
                 <MoveTo questId="1" x="4250.376" y="4232.752" z="-24.56764" pathPrecision="10" name="Stonefort-01" />
                 <MoveTo questId="1" x="4243.99" y="4186.121" z="0.245108"  name="Stonefort-01" />
                 <MoveTo questId="1" x="4185.254" y="4075.947" z="0.2290937" pathPrecision="10" name="Stonefort-01" />
-                <MoveTo questId="1" x="4183.186" y="3935.875" z="2.820084" pathPrecision="10" name="Checkpoint after Bridge" /> 
+                <MoveTo questId="1" x="4183.186" y="3935.875" z="2.820084" pathPrecision="10" name="Checkpoint after Bridge" />
                 <WaitTimer questId="1" waitTime="250" />
-            </If>   
-            
+            </If>
+
             <!-- Checkpoint across bridge-->
             <If condition="ActorExistsAt(3795, 4183.186, 3935.875, 2.820084, 50) and CurrentWorldId == 93099">
                 <WaitTimer questId="1" waitTime="250" />
                 <MoveTo questId="1" x="4196.309" y="3875.116" z="0.9675105" pathPrecision="5" name="Middle of Grate after Checkpoint" />
-                
+
                 <TrinityUseOnce questId="1" id="110" max="2">
                     <TrinityLog questId="1" output="Now running up side stairs to the left after bridge" />
                     <MoveTo questId="1" x="4240.085" y="3874.757" z="0.09999809" pathPrecision="3" name="SideStairs10-1" />
@@ -47,7 +47,7 @@
                     <MoveTo questId="1" x="4240.591" y="3873.198" z="0.0999981" pathPrecision="3" name="SideStairs10-7" />
                     <TrinityUseStop id="110" />
                 </TrinityUseOnce>
-                
+
                 <MoveTo questId="1" x="4212.701" y="3853.987" z="0.09999794" pathPrecision="10" name="Stonefort-01" />
                 <MoveTo questId="1" x="4218.534" y="3769.938" z="0.09999999" pathPrecision="3" name="In front of ID 20" />
 
@@ -70,7 +70,7 @@
                 <MoveTo questId="1" x="3868.592" y="3808.428" z="-24.9" pathPrecision="10" name="Stonefort-18" />
                 <MoveTo questId="1" x="3867.485" y="3749.424" z="0.1000076"  name="Stonefort-19" />
                 <MoveTo questId="1" x="3837.84" y="3709.956" z="0.1000027" pathPrecision="10" name="Stonefort-20" />
-                
+
                 <TrinityUseOnce questId="1" id="112" max="2" >
                     <MoveTo questId="1" x="3875.368" y="3689.878" z="0.1000015" pathPrecision="3" name="Sidestairs30-01" />
                     <MoveTo questId="1" x="3955.917" y="3687.855" z="25.1"  name="Sidestairs30-02" />
@@ -87,10 +87,10 @@
                     <MoveTo questId="1" x="3874.085" y="3690.057" z="0.1000028"  name="Sidestairs30-13" />
                     <TrinityUseStop id="112" />
                 </TrinityUseOnce>
-                
+
                 <MoveTo questId="1" x="3816.303" y="3694.656" z="0.1000019" pathPrecision="3" name="Stonefort-20" />
                 <MoveTo questId="1" x="3753.486" y="3693.653" z="0.1000019" pathPrecision="10" name="Stonefort-34" />
-                
+
                 <TrinityUseOnce questId="1" id="113" max="2" >
                     <MoveTo questId="1" x="3740.242" y="3661.956" z="0.2451074" pathPrecision="3" name="Sidestairs40-01" />
                     <MoveTo questId="1" x="3678.7" y="3655.25" z="25.1" name="Sidestairs40-02" />
@@ -98,12 +98,12 @@
                     <MoveTo questId="1" x="3737.482" y="3692.022" z="0.1000019" pathPrecision="10" name="Sidestairs40-04" />
                     <TrinityUseStop id="113" />
                 </TrinityUseOnce>
-                
+
                 <MoveTo questId="1" x="3688.689" y="3705.723" z="0.1000019" pathPrecision="10" name="Stonefort-39" />
                 <MoveTo questId="1" x="3579.041" y="3689.529" z="0.8375952" pathPrecision="10" name="Stonefort-40" />
                 <MoveTo questId="1" x="3503.109" y="3693.468" z="25.27349"  name="Stonefort-41" />
                 <MoveTo questId="1" x="3477.433" y="3689.768" z="25.27348"  pathPrecision="1" name="Stonefort-40" />
-                
+
                 <TrinityUseOnce questId="1" id="114" max="2" >
                     <MoveTo questId="1" x="3499.477" y="3712.287" z="25.55289"  pathPrecision="1" name="Sidestairs50-01" />
                     <MoveTo questId="1" x="3492.066" y="3780.812" z="25.27348" pathPrecision="10" name="Sidestairs50-02" />
@@ -112,16 +112,16 @@
                     <MoveTo questId="1" x="3446.663" y="3629.618" z="0.3137375" name="Sidestairs50-05" />
                     <TrinityUseStop id="114" />
                 </TrinityUseOnce>
-                
+
                 <MoveTo questId="1" x="3477.32" y="3633.532" z="0.3137394" name="Stonefort-45"  />
                 <MoveTo questId="1" x="3502.791" y="3620.802" z="0.1" pathPrecision="1" name="Stonefort-46"/>
                 <MoveTo questId="1" x="3509.327" y="3618.292" z="0.1000028" pathPrecision="1" name="Stonefort-47" />
                 <MoveTo questId="1" x="3507.779" y="3549.252" z="0.1000019" pathPrecision="3" name="Stonefort-48"/>
-                <MoveTo questId="1" x="3510.614" y="3501.776" z="0.100001"  pathPrecision="3" name="Stonefort-49" />    
+                <MoveTo questId="1" x="3510.614" y="3501.776" z="0.100001"  pathPrecision="3" name="Stonefort-49" />
                 <MoveTo questId="1" x="3506.657" y="3458.459" z="0.1513222" pathPrecision="3" name="Stonefort-50"/> <!-- Stuck near catapult fixed-->
-                <MoveTo questId="1" x="3502.767" y="3374.566" z="0.1" pathPrecision="3" name="Stonefort-50"/> 
+                <MoveTo questId="1" x="3502.767" y="3374.566" z="0.1" pathPrecision="3" name="Stonefort-50"/>
                 <MoveTo questId="1" x="3500.487" y="3308.97" z="0.1000015" pathPrecision="3" name="Stonefort-51"/>
-                
+
                 <TrinityUseOnce questId="1" id="115" max="2" >
                     <MoveTo questId="1" x="3555.146" y="3310.59" z="25.34047"  name="Sidestairs60-01" />
                     <MoveTo questId="1" x="3564.974" y="3279.456" z="25.24511" pathPrecision="3" name="Sidestairs60-02" />
@@ -129,16 +129,16 @@
                     <MoveTo questId="1" x="3506.301" y="3308.56" z="0.3282085"  name="Sidestairs60-04" />
                     <TrinityUseStop id="115" />
                 </TrinityUseOnce>
-                
+
                 <MoveTo questId="1" x="3463.842" y="3298.881" z="0.1000038" pathPrecision="10" name="Stonefort-56" />
                 <MoveTo questId="1" x="3374.967" y="3244.451" z="0.1000038" pathPrecision="10" name="Stonefort-57" />
                 <MoveTo questId="1" x="3319.312" y="3257.573" z="0.09999999" pathPrecision="10" name="Stonefort-58" />
                 <MoveTo questId="1" x="3289.249" y="3320.663" z="0.4422254" pathPrecision="10" name="Stonefort-59" />
                 <MoveTo questId="1" x="3288.18" y="3325.812" z="0.589447"  name="Stonefort-60"/>
                 <WaitTimer questId="1" waitTime="250" />
-            </If>   
-            
-            <!-- Checkpoint --> 
+            </If>
+
+            <!-- Checkpoint -->
             <If condition="ActorExistsAt(3795, 3288.18, 3325.812, 0.589447, 50) and ZetaDia.CurrentWorldId == 93099">
                 <WaitTimer questId="1" waitTime="250" />
                 <MoveTo questId="1" x="3297.296" y="3318.617" z="0.3082159" name="Stonefort-61" />
@@ -151,33 +151,35 @@
                 <MoveTo questId="1" x="3264.937" y="2751.992" z="0.3458459" pathPrecision="10" name="Stonefort-68" />
             </If>
 
-            <If condition="not Me.IsInTown">   
-                <UseTownPortal questId="1" />  
+            <If condition="not Me.IsInTown">
+                <UseTownPortal questId="1" />
                 <WaitWhile condition="not Me.IsInTown" />
             </If>
 
             <LogMessage output="Couldn't find Xah'Rith!" />
             <WaitTimer questId="1" waitTime="1000" />
-            <TrinityLoadProfile file="A1_Start_KeyHuntinn.xml!A2_Start_KeyHuntinn.xml" exit="true" /> 
+            <LoadProfile file="KeyHuntinn_Act_Picker.xml" />
         </While>
 
         <!-- Key Warden Xah'Rith -->
         <If condition="ActorExistsAt(256015, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 100)">
             <LogMessage output="Xah'Rith found" />
             <While condition="ActorExistsAt(256015, ZetaDia.Me.Position.X, ZetaDia.Me.Position.Y, ZetaDia.Me.Position.Z, 150)">
-                <TrinityMoveToSNO questId="1" snoid="256015" pathPrecision="5" />
+                <MoveTo questId="1" actorId="256015" pathPrecision="5" />
+                <!-- <TrinityMoveToSNO questId="1" snoid="256015" pathPrecision="5" /> -->
+                <MoveTo />
             </While>
             <LogMessage output="Xah'Rith killed" />
             <WaitTimer questId="1" waitTime="1000" />
         </If>
-        
-        <If condition="not Me.IsInTown">   
-            <UseTownPortal questId="1" />  
+
+        <If condition="not Me.IsInTown">
+            <UseTownPortal questId="1" />
             <WaitWhile condition="not Me.IsInTown" />
         </If>
 
         <LogMessage output="Act 3 Done" />
         <WaitTimer questId="1" waitTime="1000" />
-        <TrinityLoadProfile file="A1_Start_KeyHuntinn.xml!A2_Start_KeyHuntinn.xml" exit="true" />
+        <LoadProfile file="KeyHuntinn_Act_Picker.xml" />
     </Order>
-</Profile>  
+</Profile>
