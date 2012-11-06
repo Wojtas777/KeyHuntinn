@@ -9,8 +9,10 @@
 		</If>
 		<WaitTimer questId="1" waitTime="2500" />
 		<LoadProfile loadRandom="true">
-			<Profile>Elderberries_Mine.xml</Profile>
-			<Profile>Elderberries_MineB.xml</Profile>
+			<Profiles>
+				<Profile>Elderberries_Mine.xml</Profile>
+				<Profile>Elderberries_MineB.xml</Profile>
+			</Profiles>
 		</LoadProfile>
 	</Order>
 </Profile>

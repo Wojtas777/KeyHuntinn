@@ -157,8 +157,10 @@
 		
 		<WaitTimer questId="1" waitTime="5000" />
 		<LoadProfile loadRandom="true">
-			<Profile>BigRed_StonefortA.xml</Profile>
-			<Profile>BigRed_StonefortB.xml</Profile>
+			<Profiles>
+				<Profile>BigRed_StonefortA.xml</Profile>
+				<Profile>BigRed_StonefortB.xml</Profile>
+			</Profiles>
 		</LoadProfile>
 	</Order>
 </Profile>

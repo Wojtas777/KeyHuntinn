@@ -39,8 +39,10 @@
     
 <!-- switch profiles using random versions -->
     <LoadProfile loadRandom="true">
-        <Profile>Elderberries_Alcarnus.xml</Profile>
-        <Profile>Elderberries_AlcarnusB.xml</Profile>
+        <Profiles>
+            <Profile>Elderberries_Alcarnus.xml</Profile>
+            <Profile>Elderberries_AlcarnusB.xml</Profile>
+        </Profiles>
     </LoadProfile>
 	
 </Order>

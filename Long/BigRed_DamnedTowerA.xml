@@ -151,8 +151,10 @@
 		<WaitTimer questId="1" waitTime="2000" />
 
 		<LoadProfile loadRandom="true">
-			<Profile>BigRed_DamnedHeartA.xml</Profile>
-			<Profile>BigRed_DamnedHeartB.xml</Profile>
+			<Profiles>
+				<Profile>BigRed_DamnedHeartA.xml</Profile>
+				<Profile>BigRed_DamnedHeartB.xml</Profile>
+			</Profiles>
 		</LoadProfile>
 	</Order>
 </Profile>

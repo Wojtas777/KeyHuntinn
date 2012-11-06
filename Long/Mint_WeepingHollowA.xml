@@ -99,8 +99,10 @@
 		
 		<WaitTimer questId="1" waitTime="5000" />
 		<LoadProfile loadRandom="true">
-	        <Profile>Mint_FieldsofMiseryA.xml</Profile>
-	        <Profile>Mint_FieldsofMiseryB.xml</Profile>
+			<Profiles>
+		        <Profile>Mint_FieldsofMiseryA.xml</Profile>
+		        <Profile>Mint_FieldsofMiseryB.xml</Profile>
+		    </Profiles>
 	    </LoadProfile>
 	</Order>
 </Profile>

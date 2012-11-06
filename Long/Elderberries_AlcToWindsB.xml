@@ -48,8 +48,10 @@
 		
 <!-- switch profiles using random versions -->
 	<LoadProfile loadRandom="true">
-        <Profile>Elderberries_KhasimToWinds.xml</Profile>
-        <Profile>Elderberries_KhasimToWindsB.xml</Profile>
+        <Profiles>
+            <Profile>Elderberries_KhasimToWinds.xml</Profile>
+            <Profile>Elderberries_KhasimToWindsB.xml</Profile>
+        </Profiles>
     </LoadProfile>
 	
 </Order>

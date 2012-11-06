@@ -54,8 +54,10 @@
 
 <!-- switch profiles using random versions -->
 	<LoadProfile loadRandom="true">
-        <Profile>Elderberries_AlcToWinds.xml</Profile>
-        <Profile>Elderberries_AlcToWindsB.xml</Profile>
+        <Profiles>
+            <Profile>Elderberries_AlcToWinds.xml</Profile>
+            <Profile>Elderberries_AlcToWindsB.xml</Profile>
+        </Profiles>
     </LoadProfile>
 </Order>
 <KillMonsters>True</KillMonsters>

@@ -33,8 +33,10 @@
             <LogMessage output="You have a lot of Destruction Keys, running A2 or A3" />
             <TrinityLoadProfile file="A2_Start_KeyHuntinn.xml!A3_Start_Keyhuntinn.xml" exit="true" />
             <!-- <LoadProfile loadRandom="true" leaveGame="true">
-                <Profile>A2_Start_KeyHuntinn.xml</Profile>
-                <Profile>A3_Start_KeyHuntinn.xml</Profile>
+                <Profiles>
+                    <Profile>A2_Start_KeyHuntinn.xml</Profile>
+                    <Profile>A3_Start_KeyHuntinn.xml</Profile>
+                </Profiles>
             </LoadProfile> -->
         </If>
 
@@ -43,8 +45,10 @@
             <LogMessage output="You have a lot of Hate Keys, running A1 or A3" />
             <TrinityLoadProfile file="A1_Start_KeyHuntinn.xml!A3_Start_Keyhuntinn.xml" exit="true" />
             <!-- <LoadProfile loadRandom="true" leaveGame="true">
-                <Profile>A1_Start_KeyHuntinn.xml</Profile>
-                <Profile>A3_Start_KeyHuntinn.xml</Profile>
+                <Profiles>
+                    <Profile>A1_Start_KeyHuntinn.xml</Profile>
+                    <Profile>A3_Start_KeyHuntinn.xml</Profile>
+                </Profiles>
             </LoadProfile> -->
         </If>
 
@@ -53,8 +57,10 @@
             <LogMessage output="You have a lot of Terror Keys, running A1 or A2" />
             <TrinityLoadProfile file="A1_Start_KeyHuntinn.xml!A2_Start_Keyhuntinn.xml" exit="true" />
             <!-- <LoadProfile loadRandom="true" leaveGame="true">
-                <Profile>A1_Start_KeyHuntinn.xml</Profile>
-                <Profile>A2_Start_KeyHuntinn.xml</Profile>
+                <Profiles>
+                    <Profile>A1_Start_KeyHuntinn.xml</Profile>
+                    <Profile>A2_Start_KeyHuntinn.xml</Profile>
+                </Profiles>
             </LoadProfile> -->
         </If>
 
@@ -62,9 +68,11 @@
         <LogMessage output="You have no Keys or all amounts are equal, running A1, A2, or A3" />
         <TrinityLoadProfile file="A1_Start_KeyHuntinn.xml!A2_Start_KeyHuntinn.xml!A3_Start_Keyhuntinn.xml" exit="true" />
         <!-- <LoadProfile loadRandom="true" leaveGame="true">
-            <Profile>A1_Start_KeyHuntinn.xml</Profile>
-            <Profile>A2_Start_KeyHuntinn.xml</Profile>
-            <Profile>A3_Start_KeyHuntinn.xml</Profile>
+            <Profiles>
+                <Profile>A1_Start_KeyHuntinn.xml</Profile>
+                <Profile>A2_Start_KeyHuntinn.xml</Profile>
+                <Profile>A3_Start_KeyHuntinn.xml</Profile>
+            </Profiles>
         </LoadProfile> -->
     </Order>
 </Profile>
