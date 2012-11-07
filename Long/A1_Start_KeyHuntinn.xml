@@ -7,6 +7,6 @@
             <WaitWhile condition="not Me.IsInTown" />
         </If>
 
-        <LoadProfile file="Mint_START_HERE.xml" />
+        <LoadProfile profile="Mint_START_HERE.xml" />
     </Order>
 </Profile>
