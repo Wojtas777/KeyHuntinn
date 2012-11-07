@@ -37,7 +37,8 @@
 		<!-- Kill Cydaea (Step 23 is in battle with Cydaea) -->	
 		<If condition="IsActiveQuest(101758) and IsActiveQuestStep(23)" >	
 			<MoveTo questId="1" x="1159.117" y="1078.982" z="0.1000016" pathPrecision="10" name="Cydaea-01"  />
-			<WaitTimer questId="1" waitTime="50000" />
+			<WaitWhile condition="IsActiveQuest(101758) and IsActiveQuestStep(23)" />
+			<!-- WaitTimer questId="1" waitTime="50000" / -->
 		</If>
 		
 		<!-- Cydaea dead but Sin Heart remains -->
