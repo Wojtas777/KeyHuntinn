@@ -53,12 +53,7 @@
     </If>
 
 <!-- switch profiles using random versions -->
-	<LoadProfile loadRandom="true">
-        <Profiles>
-            <Profile>Elderberries_AlcToWinds.xml</Profile>
-            <Profile>Elderberries_AlcToWindsB.xml</Profile>
-        </Profiles>
-    </LoadProfile>
+	<LoadProfile profile="Elderberries_AlcToWindsB.xml" />
 </Order>
 <KillMonsters>True</KillMonsters>
 <PickupLoot>True</PickupLoot>
