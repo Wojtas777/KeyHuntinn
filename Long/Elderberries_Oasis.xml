@@ -69,56 +69,10 @@
 <MoveTo questId="1" x="3760.634" y="4378.208" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
 <MoveTo questId="1" x="3733.628" y="4317.771" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
 <MoveTo questId="1" x="3629.407" y="4312.877" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
-
-<!--check for Forgotten ruins entrance-->
-	<If condition="ZetaDia.CurrentWorldId==70885 and ActorExistsAt(185067, 3557.5, 4267, 104.095, 10)" >
-	<MoveTo questId="1" x="3586.433" y="4273.75" z="100.1" pathPrecision="1" />
-	<MoveTo questId="1" x="3557.5" y="4267" z="104.095" pathPrecision="1" />
-	<UseObject questId="1" actorId="185067" x="3557.5" y="4267" z="104.095" isPortal="True" destinationWorldId="61631" />
-	<WaitTimer WaitTime="1000" />
-	</If>
-		<!-- run  FR when found -->
-
-		<If condition="Zeta.ZetaDia.CurrentWorldId == 61631" >
-		<ExploreArea  questId="1" stepId="1" boxTolerance="0.40" boxSize="15" until="ObjectFound" actorId="135248" />
-<WaitTimer WaitTime="3000" />
-
-<While questId="1" condition="Zeta.ZetaDia.CurrentWorldId == 61631">
-<TrinityIfSNOInRange questId="1" snoid="135248" range="80" >
-	<TrinityInteract snoid="135248"  interactrange="80" />
-	<WaitTimer questId="1" WaitTime="3000" />
-	<TrinityLog questId="1" output="interacting?" />
-</TrinityIfSNOInRange >
-</While>
-		</If>
-
-
 <MoveTo questId="1" x="3587.438" y="4221.764" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
 <MoveTo questId="1" x="3487.08" y="4143.005" z="100.1" pathPrecision="3" unsafeRandomDistance="1" /> 
 <MoveTo questId="1" x="3545.959" y="4033.181" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
 <MoveTo questId="1" x="3541.897" y="3997.416" z="100.1988" pathPrecision="3" unsafeRandomDistance="1" /> 
-
-<!--check for Forgotten ruins entrance-->
-	<If condition="ZetaDia.CurrentWorldId==70885 and ActorExistsAt(185067, 3517, 3982.5, 103.2285, 10)" >
-	<MoveTo questId="1" x="3517" y="3982.5" z="103.2285"   pathPrecision="1" />
-	<UseObject questId="1" actorId="185067" x="3517" y="3982.5" z="103.2285" isPortal="True" destinationWorldId="61631" />
-	<WaitTimer WaitTime="1000" />
-	</If>
-		<!-- run  FR when found -->
-
-		<If condition="Zeta.ZetaDia.CurrentWorldId == 61631" >
-		<ExploreArea  questId="1" stepId="1" boxTolerance="0.40" boxSize="15" until="ObjectFound" actorId="135248" />
-<WaitTimer WaitTime="3000" />
-
-<While questId="1" condition="Zeta.ZetaDia.CurrentWorldId==61631">
-<TrinityIfSNOInRange questId="1" snoid="135248" range="80" >
-	<TrinityInteract snoid="135248"  interactrange="80" />
-	<WaitTimer questId="1" WaitTime="3000" />
-</TrinityIfSNOInRange >
-</While>
-		</If>
- 
-
 <MoveTo questId="1" x="3598.412" y="4030.274" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
 <MoveTo questId="1" x="3743.585" y="4079.417" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
 <MoveTo questId="1" x="3820.177" y="3984.434" z="100.153" pathPrecision="3" unsafeRandomDistance="1" />
@@ -128,28 +82,6 @@
 <MoveTo questId="1" x="3676.948" y="4329.587" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
 <MoveTo questId="1" x="3493.475" y="4317.505" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
 <MoveTo questId="1" x="3493.475" y="4317.505" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
-
-<!--check for Forgotten ruins entrance-->
-	<If condition="ZetaDia.CurrentWorldId==70885 and ActorExistsAt(185067, 3472.5, 4367, 104.095, 10)" >
-	<MoveTo questId="1" x="3472" y="4367.5" z="103.2285"  pathPrecision="1" />
-	<UseObject questId="1" actorId="185067" x="3472.5" y="4367" z="104.095" isPortal="True" destinationWorldId="61631" />
-	<WaitTimer WaitTime="1000" />
-	</If> 
-		<!-- run  FR when found -->
-
-		<If condition="Zeta.ZetaDia.CurrentWorldId == 61631" >
-		<ExploreArea  questId="1" stepId="1" boxTolerance="0.40" boxSize="15" until="ObjectFound" actorId="135248" />
-<WaitTimer WaitTime="3000" />
-
-<While questId="1" condition="Zeta.ZetaDia.CurrentWorldId==61631">
-<TrinityIfSNOInRange questId="1" snoid="135248" range="80" >
-	<TrinityInteract snoid="135248"  interactrange="80" />
-	<WaitTimer questId="1" WaitTime="3000" />
-</TrinityIfSNOInRange >
-</While>
-		</If>
-
-
 <MoveTo questId="1" x="3470.07" y="4308.3" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
 <MoveTo questId="1" x="3365.261" y="4333.059" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
 <MoveTo questId="1" x="3275.888" y="4208.143" z="98.06458" pathPrecision="3" unsafeRandomDistance="1" />
@@ -168,55 +100,9 @@
 <MoveTo questId="1" x="2867.616" y="4428.405" z="100.1484" pathPrecision="3" unsafeRandomDistance="1" />
 <MoveTo questId="1" x="2907.051" y="4321.385" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
 <MoveTo questId="1" x="3033.023" y="4249.933" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
-
-<!--check for Forgotten ruins entrance-->
-	<If condition="ZetaDia.CurrentWorldId==70885 and ActorExistsAt(185067, 2982, 4262.5, 104.095, 10)" >
-	<MoveTo questId="1" x="3010.739" y="4260.701" z="100.1" pathPrecision="1" />
-	<MoveTo questId="1" x="2982" y="4262.5" z="103.2285" pathPrecision="1" />
-	<UseObject questId="1" actorId="185067" x="2982.5" y="4262" z="104.095" isPortal="True" destinationWorldId="61631" />
-	<WaitTimer WaitTime="1000" />
-	</If> 
-		<!-- run  FR when found -->
-
-		<If condition="Zeta.ZetaDia.CurrentWorldId == 61631" >
-		<ExploreArea  questId="1" stepId="1" boxTolerance="0.40" boxSize="15" until="ObjectFound" actorId="135248" />
-<WaitTimer WaitTime="3000" />
-
-<While questId="1" condition="Zeta.ZetaDia.CurrentWorldId==61631">
-<TrinityIfSNOInRange questId="1" snoid="135248" range="80" >
-	<TrinityInteract snoid="135248"  interactrange="80" />
-	<WaitTimer questId="1" WaitTime="3000" />
-</TrinityIfSNOInRange >
-</While>
-		</If>
-		
-
 <MoveTo questId="1" x="2940.861" y="4224.197" z="100.1068" pathPrecision="3" unsafeRandomDistance="1" />
 <MoveTo questId="1" x="2960.211" y="4166.911" z="97.60065" pathPrecision="3" unsafeRandomDistance="1" />
 <MoveTo questId="1" x="2860.446" y="4345.52" z="100.1" pathPrecision="3" unsafeRandomDistance="1" />
-
-<!--check for Forgotten ruins entrance-->
-	<If condition="ZetaDia.CurrentWorldId==70885 and ActorExistsAt(185067, 2842.5, 4397, 104.095, 10)" >
-	<MoveTo questId="1" x="2868.178" y="4397.903" z="100.172" pathPrecision="1" />
-	<MoveTo questId="1" x="2842" y="4397.5" z="103.2285"  pathPrecision="1" />
-	<UseObject questId="1" actorId="185067" x="2842.5" y="4397" z="104.095" isPortal="True" destinationWorldId="61631" />
-	<WaitTimer WaitTime="1000" />
-	</If> 
-		<!-- run  FR when found -->
-		
-		<If condition="Zeta.ZetaDia.CurrentWorldId == 61631" >
-		<ExploreArea  questId="1" stepId="1" boxTolerance="0.40" boxSize="15" until="ObjectFound" actorId="135248" />
-<WaitTimer WaitTime="3000" />
-
-<While questId="1" condition="Zeta.ZetaDia.CurrentWorldId==61631">
-<TrinityIfSNOInRange questId="1" snoid="135248" range="80" >
-	<TrinityInteract snoid="135248"  interactrange="80" />
-	<WaitTimer questId="1" WaitTime="3000" />
-</TrinityIfSNOInRange >
-</While>
-		</If>
-
-
 <MoveTo questId="1" x="2789.342" y="4398.31" z="100.1002" pathPrecision="3" unsafeRandomDistance="1" />
 <MoveTo questId="1" x="2782.527" y="4460.913" z="97.66301" pathPrecision="3" unsafeRandomDistance="1" />
 <MoveTo questId="1" x="2720.793" y="4463.372" z="99.89315" pathPrecision="1" unsafeRandomDistance="1"/>
