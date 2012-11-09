@@ -33,12 +33,6 @@
 		</While>
 		
     <WaitTimer questId="1" waitTime="2000" />
-	
-	 <!-- Go back to Town -->
-		<UseTownPortal questId="1" /> 
-		<WaitTimer WaitTime="2500" />
-	
-	<!-- exits game  -->
     <MoveTo questId="1" pathPrecision="15" x="95.97552" y="56.55413" z="0.1000037" />
 	
 	 <!-- Go back to Town -->
